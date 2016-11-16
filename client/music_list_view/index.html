@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="../asset/stylesheets/material.min.css">
+	<link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	  <header class="mdl-layout__header">
+	    <div class="mdl-layout__header-row">
+	      <span class="mdl-layout-title">Music</span>
+	    </div>
+	  </header>
+	  <main class="mdl-layout__content">
+	    <div class="page-content" id="app">
+
+				<div class="mdl-card mdl-shadow--2dp music-card" v-for="item in music">
+				  <div class="mdl-card__title mdl-card--expand image">
+				  	<img src="{{item.imageUrl}}" alt="">
+				  </div>
+				  <div class="mdl-card__supporting-text">
+				    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				    Aenan convallis.
+				  </div>
+				  <div class="mdl-card__actions mdl-card--border">
+				    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+				      View Updates
+				    </a>
+				  </div>
+				</div>
+
+	    </div>
+	  </main>
+	</div>
+
+	<script src="../asset/javascripts/material.min.js"></script>
+	<script src="../asset/javascripts/jquery.min.js"></script>
+	<script src="../asset/javascripts/vue.min.js"></script>
+	<script src="javascripts/index.js"></script>
+</body>
+</html>
