@@ -31,11 +31,20 @@ body,html {
 }
 
 .login-form {
-	width: 45%;
+	width: 50%;
 	margin: 5% auto;
 }
 .login-form-contents {
 	width: 100%;
+}
+.login-form-text-area {
+	width: 100%;
+}
+.login-form-user-id {
+	margin-left: 10%;
+}
+.login-form-password {
+	margin-left: 10%;
 }
 
 .sign-up {
