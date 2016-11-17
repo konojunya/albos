@@ -9,16 +9,23 @@ body,html{
 }
 
 #app{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
+	text-align: center;
+	margin: 0 auto;
 }
+
 .music-card{
-	width: 300px;
+	width: 200px;
+	margin: 15px;
+}
+
+.music-card .text{
+	text-align: left;
 }
 
 .music-card .image{
 	color: #fff;
+	width: 100%;
+	padding: 0;
 }
 .music-card .image img{
 	display: block;
