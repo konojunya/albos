@@ -28,31 +28,47 @@ public class Member_Registration extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String credit_card_number = "12345678987623";
-		String card_company = "VISA";
-		String card_date = "20161124155454";
-		int security_code = 98765;
 		
-		String user_id = "00003";
-		String user_name = "tarou";
-		String password = "123456";
-		String mail_address = "tarou@yahoo.co.jp";
+		String credit_card_number = request.getParameter("credit_card_number");
+		String card_company = request.getParameter("card_company");
+		String card_date = request.getParameter("card_date");
+		String Stringsecurity_code = request.getParameter("security_code");
+		String user_id = request.getParameter("user_id");
+		String user_name = request.getParameter("user_name");
+		String password = request.getParameter("password");
+		String mail_address = request.getParameter("mail_address");
+		
+		int security_code=0;
+		//エラー回避
+		if (!Stringsecurity_code.equals("")){
+			security_code =Integer.parseInt(Stringsecurity_code);
+		}
 
 		Albos_Dao Dao = new Albos_Dao();
+		ErrorCheck check = new ErrorCheck();
 		
-		try {
-			System.out.println(Dao.updateCredit(credit_card_number, card_company, card_date, security_code));
-		} catch (SQLException e1) {
-			System.out.println("updateCreditエラー");
-			e1.printStackTrace();
+		if(check.E_check(credit_card_number, card_company, card_date, security_code, user_id, user_name, password, mail_address)==true){
+			
+			//Database処理
+			try {
+				System.out.println(Dao.updateCredit(credit_card_number, card_company, card_date, security_code));
+			} catch (SQLException e1) {
+				System.out.println("updateCreditエラー");
+				e1.printStackTrace();
+			}
+			
+			try {
+				System.out.println(Dao.updateUser(user_id, user_name, password, credit_card_number, mail_address));
+			} catch (SQLException e) {
+				System.out.println("updateUserエラー");
+				e.printStackTrace();
+			}
+		}
+		else{
+			System.out.println("入力ミス");
 		}
 		
-		try {
-			System.out.println(Dao.updateUser(user_id, user_name, password, credit_card_number, mail_address));
-		} catch (SQLException e) {
-			System.out.println("updateUserエラー");
-			e.printStackTrace();
-		}
+		
 	}
 
 	/**
