@@ -38,17 +38,52 @@ public class Member_Registration extends HttpServlet {
 		String password = request.getParameter("password");
 		String mail_address = request.getParameter("mail_address");
 		
+		
+		//NULLチェック。
+		if(credit_card_number == null){
+			System.out.println("NULLです。");
+		}
+		if(card_company == null){
+			System.out.println("NULLです。");
+		}
+		if(card_date == null){
+			System.out.println("NULLです。");
+		}
+		if(Stringsecurity_code == null){
+			System.out.println("NULLです。");
+		}
+		if(user_id == null){
+			System.out.println("NULLです。");
+		}
+		if(user_name == null){
+			System.out.println("NULLです。");
+		}
+		if(password == null){
+			System.out.println("NULLです。");
+		}
+		if(mail_address == null){
+			System.out.println("NULLです。");
+		}
+		
+			
 		int security_code=0;
 		//エラー回避
 		if (!Stringsecurity_code.equals("")){
 			security_code =Integer.parseInt(Stringsecurity_code);
 		}
-
+		
 		Albos_Dao Dao = new Albos_Dao();
 		ErrorCheck check = new ErrorCheck();
-		
-		if(check.E_check(credit_card_number, card_company, card_date, security_code, user_id, user_name, password, mail_address)==true){
 			
+		//空白チェック。
+		if(!check.E_check(credit_card_number, card_company, card_date, security_code, user_id, user_name, password, mail_address)){
+			System.out.println("空白が含まれています。");
+		}
+		//メールアドレスが正規表現チェック。
+		else if (!check.mail_check(mail_address)){
+			System.out.println("メールアドレスが間違っています。");
+		}
+		else {
 			//Database処理
 			try {
 				System.out.println(Dao.updateCredit(credit_card_number, card_company, card_date, security_code));
@@ -56,7 +91,8 @@ public class Member_Registration extends HttpServlet {
 				System.out.println("updateCreditエラー");
 				e1.printStackTrace();
 			}
-			
+						
+			//Database処理
 			try {
 				System.out.println(Dao.updateUser(user_id, user_name, password, credit_card_number, mail_address));
 			} catch (SQLException e) {
@@ -64,13 +100,9 @@ public class Member_Registration extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		else{
-			System.out.println("入力ミス");
-		}
-		
-		
 	}
-
+		
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
