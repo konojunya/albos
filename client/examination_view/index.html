@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="../asset/stylesheets/material.min.css">
+	<link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	  <header class="mdl-layout__header">
+	    <div class="mdl-layout__header-row">
+	      <span class="mdl-layout-title">審査楽曲一覧</span>
+	    </div>
+	  </header>
+	  <main class="mdl-layout__content">
+	    <div class="page-content" id="app">
+
+		    <ul class="tabs">
+		    	<li class="tab" v-bind:class="{list.isActive: active}" v-for="list in tabList">{{list.tabName}}</li>
+		    </ul>
+
+				<ul class="music_accept_list">
+					<li class="music_item" v-for="item in music | filterBy 'hoge' in 'title'">
+				    <p class="title">{{item.title}}</p>
+			      <div>
+			        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="{{item.id}}">
+			          <input
+			          	type="checkbox"
+			          	id="{{item.id}}"
+			          	class="mdl-switch__input"
+			          	:checked="item.isAccepted == true"
+			          	v-on:click="toggleCheck"
+			          />
+			        </label>
+				    </div>
+				  </li>
+				</ul>
+
+	    </div>
+	  </main>
+	</div>
+
+	<script src="../asset/javascripts/material.min.js"></script>
+	<script src="../asset/javascripts/jquery.min.js"></script>
+	<script src="../asset/javascripts/vue.min.js"></script>
+	<script src="../asset/javascripts/masonry.pkgd.min.js"></script>
+	<script src="../asset/javascripts/imagesloaded.pkgd.min.js"></script>
+	<script src="javascripts/index.js"></script>
+</body>
+</html>
