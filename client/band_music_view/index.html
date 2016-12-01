@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="../asset/stylesheets/material.min.css">
+	<link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	  <header class="mdl-layout__header">
+	    <div class="mdl-layout__header-row">
+	      <span class="mdl-layout-title">RADWIMPS</span>
+	    </div>
+	  </header>
+	  <main class="mdl-layout__content">
+	    <div class="page-content" id="app">
+
+				<div class="mdl-card music-card" v-for="item in music">
+				  <div class="mdl-card__title mdl-card--expand image">
+				  	<img src="{{item.imageUrl}}" alt="">
+				  </div>
+				  <div class="description">
+				  	<p class="music_title">全然前世</p>
+				  	<p class="music_artist">RADWIMPS</p>
+				  </div>
+				</div>
+
+	    </div>
+	  </main>
+	</div>
+
+	<script src="../asset/javascripts/material.min.js"></script>
+	<script src="../asset/javascripts/jquery.min.js"></script>
+	<script src="../asset/javascripts/vue.min.js"></script>
+	<script src="../asset/javascripts/masonry.pkgd.min.js"></script>
+	<script src="../asset/javascripts/imagesloaded.pkgd.min.js"></script>
+	<script src="javascripts/index.js"></script>
+</body>
+</html>
