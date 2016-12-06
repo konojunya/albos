@@ -37,7 +37,7 @@ public class ErrorCheck {
 	
 	public boolean mail_check(String mail_address){
 		
-		final String MATCH_MAIL ="^(https?|ftp)(:\\/\\/[-_.!~*\\'()a-zA-Z0-9;\\/?:\\@&=+\\$,%#]+)$";
+		final String MATCH_MAIL ="[\\w\\.\\-]+@(?:[\\w\\-]+\\.)+[\\w\\-]+";
 		
 		if(mail_address.matches(MATCH_MAIL)){
 			return true;
