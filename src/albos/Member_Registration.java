@@ -39,9 +39,12 @@ public class Member_Registration extends HttpServlet {
 		String mail_address = request.getParameter("mail_address");
 		
 		
+		boolean flg = true;
+		
 		//NULLチェック。
 		if(credit_card_number == null){
-			System.out.println("NULLです。");
+			//System.out.println("NULLです。");
+			//flg = false;
 		}
 		if(card_company == null){
 			System.out.println("NULLです。");
