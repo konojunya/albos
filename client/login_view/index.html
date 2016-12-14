@@ -25,7 +25,7 @@
 						</div>
 						<div class="mdl-card__supporting-text login-form-text-area">
 
-					   	<form action="#">
+					   	<form action="login" method="post">
 					   		<table>
 					   			<tr>
 					   				<td>
@@ -33,9 +33,9 @@
 					   				</td>
 					   				<td>
 					   					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label login-form-user-id">
-										   	<input class="mdl-textfield__input" type="text" id="user_id" name="user_id">
-										   	<label class="mdl-textfield__label" for="user-id">入力してください</label>
-											</div>
+										   	<input class="mdl-textfield__input" type="text" id="user_id" name="user_id" placeholder="入力してください">
+										   	<!-- <label class="mdl-textfield__label" for="user-id">入力してください</label> -->
+										</div>
 					   				</td>
 					   			</tr>
 					   			<tr>
@@ -44,20 +44,19 @@
 					   				</td>
 					   				<td>
 					   					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label login-form-password">
-										   	<input class="mdl-textfield__input" type="text" id="password" name="password">
-										   	<label class="mdl-textfield__label" for="password">入力してください</label>
-											</div>
+										   	<input class="mdl-textfield__input" type="password" id="password" name="password" placeholder="入力してください">
+										   	<!-- <label class="mdl-textfield__label" for="password">入力してください</label> -->
+										</div>
 					   				</td>
 					   			</tr>
 					   		</table>
-								
-							</form>
 
-						</div>
-						<div class="mdl-card__actions mdl-card--border">
-						   <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect login-btn">
-						      ログインする
-						   </a>
+					   		<div class="mdl-card__actions mdl-card--border">
+					   			<input type="submit" value="ログインする" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect login-btn">
+							</div>
+								
+						</form>
+
 						</div>
 					</div>
 				</div>
