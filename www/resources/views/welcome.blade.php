@@ -39,8 +39,8 @@
         <div class="container">
             <div class="content">
                 <div class="title">
-                    KZK48<br/>
-                    SMH??<br/>
+                    KZK20<br/>
+                    SMH05<br/>
                     JUN19<br/>
                     KSY20<br/>
                     KMK19<br/>
