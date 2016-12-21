@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -10,10 +9,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
-// $user_id = 'kinokoruumu';
-Route::get('/login', 'loginAuthController@login');
-    // ,array('user_id' => 'kinokoruumu'));
+Route::get('/login', function () {
+    return view('Auth.login');
+});
+Route::post('/login', 'loginAuthController@login');
+
+//ルーティング書いたやつ全部飛びました(~_~)

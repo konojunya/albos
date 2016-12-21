@@ -26,7 +26,7 @@
 						</div>
 						<div class="mdl-card__supporting-text login-form-text-area">
 
-					   	<form action="../UserLogin" method="post">
+					   	<form action="login" method="post">
 					   		<table>
 					   			<tr>
 					   				<td>
@@ -51,6 +51,8 @@
 					   				</td>
 					   			</tr>
 					   		</table>
+
+					   		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
 					   		<div class="mdl-card__actions mdl-card--border">
 					   			<input type="submit" value="ログインする" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect login-btn">
