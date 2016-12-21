@@ -82,5 +82,8 @@ body,html {
 .music-title {
 	border-bottom: 3px solid #333;
 }
+.artist-name {
+	font-size: 2rem;
+}
 
 
