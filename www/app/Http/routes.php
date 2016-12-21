@@ -16,5 +16,6 @@ Route::get('/login', function () {
     return view('Auth.login');
 });
 Route::post('/login', 'loginAuthController@login');
+Route::get('/jun', 'junnobakaController@index');
 
 //ルーティング書いたやつ全部飛びました(~_~)
