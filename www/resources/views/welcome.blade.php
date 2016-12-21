@@ -39,12 +39,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">
-                    KZK20<br/>
-                    SMH05<br/>
-                    JUN19<br/>
-                    KSY20<br/>
-                    KMK19<br/>
-                    MNR20<br/>
+                    {{$user_id}}
                 </div>
             </div>
         </div>

@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+// $user_id = 'kinokoruumu';
+Route::get('/login', 'loginAuthController@login');
+    // ,array('user_id' => 'kinokoruumu'));
