@@ -4,16 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\test_user;
 use App\Http\Requests;
 
 class loginAuthController extends Controller
 {
     public function login(Request $request)
-    {	
-    	$database_user_id = 'kinoko';  //DBから取得
-    	$database_password = 'kinoko'; //DBから取得
+    {
+    	//入力情報の取得
 		$user_id = $request->input('user_id');
 		$password = $request->input('password');
+
+		//データベースからユーザー情報の取得
+		$database_user_id = test_user::where('user_id', $user_id)->value('user_id');
+    	$database_password = test_user::where('user_id', $user_id)->value('password');
 
 		if ($database_user_id != $user_id) {
 			return view("mypage",array('result' => 'login error'));
@@ -22,6 +26,5 @@ class loginAuthController extends Controller
 			return view("mypage",array('result' => 'login error'));
 		}
 		return view("mypage",array('result' => 'login success'));
-		
     }
 }

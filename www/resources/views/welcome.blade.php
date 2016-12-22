@@ -39,7 +39,9 @@
         <div class="container">
             <div class="content">
                 <div class="title">
-                    Laravel 5
+                    Hello<br>
+                    my name is<br>
+                    albos system
                 </div>
             </div>
         </div>
