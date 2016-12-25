@@ -13,7 +13,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/login', function () {
     return view('auth.login');
 });
@@ -21,10 +20,6 @@ Route::post('/login', 'loginAuthController@login');
 
 
 
-Route::get('/music', function () {
-    // return view('music.music_detail');
-    return view('');
-});
 Route::get('/music/{music_id}', 'musicController@select');
 
 Route::get('/music/{music_id}/buy', function () {

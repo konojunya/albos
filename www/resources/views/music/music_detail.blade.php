@@ -5,18 +5,15 @@
 	<title></title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
-	<link rel="stylesheet" href="css/music_detail.css">
+	<link rel="stylesheet" href="/css/music_detail.css">
 </head>
 <body>
-	<!-- <h1>hello</h1> -->
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 		<header class="mdl-layout__header">
 			<div class="mdl-layout__header-row">
 				<span class="mdl-layout-title">曲詳細</span>
 			</div>
 		</header>
-
-		{{$music_id}}
 		
 		<main class="mdl-layout__content">
 			<div class="page-content">
