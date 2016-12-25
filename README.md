@@ -13,8 +13,8 @@
 |:-----------|:-------------------------------|:----------------------------------|
 | GET        |  /                             |　　ＴＯＰページ　　　　　　　　　　　　　|
 | GET        |  /music                        |　　曲一覧　　　　　　　　　　　　　　　　|
-| GET        |  /music/:music_id              |　　曲詳細ページ　　　　　　　          |
-| GET        |  /:band_id/music               |　　バンドごとのアップロード済みの曲一覧　|
+| GET        |  /music/:album_id              |　　曲詳細ページ　　　　　　　          |
+| GET        |  /:band_id/album_id               |　　バンドごとのアップロード済みの曲一覧　|
 <br>
 <br>
 
@@ -22,7 +22,7 @@
 
 | Method     |  URL                           |   Detail                |
 |:-----------|:-------------------------------|:------------------------|
-| GET        |  /music/:music_id/buy          |　　購入　　　　　　　　　　　|
+| GET        |  /music/:album_id/buy          |　　購入　　　　　　　　　　　|
 | GET        |  /user/signup                  |　　ユーザ入会　　　　　　　　|
 | GET        |  /user/login                   |　　ユーザログイン　　　　　　|
 | POST       |  /user/login                   |　　ユーザログイン　　　　　　|

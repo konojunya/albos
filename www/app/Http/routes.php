@@ -20,9 +20,9 @@ Route::post('/login', 'loginAuthController@login');
 
 
 
-Route::get('/music/{music_id}', 'musicController@select');
+Route::get('/music/{album_id}', 'musicController@select');
 
-Route::get('/music/{music_id}/buy', function () {
+Route::get('/music/{album_id}/buy', function () {
     return view('');
 });
 Route::get('/{band_id}/music', function () {
