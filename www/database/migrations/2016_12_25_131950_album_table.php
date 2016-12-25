@@ -20,6 +20,7 @@ class AlbumTable extends Migration
             $table->date('release');
             $table->string('band_id', 10);
             $table->string('genre_id', 10);
+            
 
             // $table->foreign('band_id')->references('band')->on('band_id');
             // $table->foreign('genre_id')->references('genre')->on('genre_id');

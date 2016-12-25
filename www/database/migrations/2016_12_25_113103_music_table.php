@@ -13,13 +13,13 @@ class MusicTable extends Migration
     public function up()
     {
         Schema::create('music', function (Blueprint $table) {
-            $table->string('album_id', 10)->unique();
-            $table->string('music_id', 10)->unique();
+            $table->string('album_id', 10);
+            $table->string('music_id', 10);
             $table->string('music_title', 20);
             $table->text('lyrics');
             $table->integer('price');
             $table->string('music_data_path', 40);
-            $table->time('time');
+            $table->time('music_time');
 
             $table->primary(['album_id', 'music_id']);
         });

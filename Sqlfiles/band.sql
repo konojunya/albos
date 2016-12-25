@@ -1,0 +1,1 @@
+insert into band (band_id, band_name, mail_address, band_icon_pass, band_profile_bg_path, band_profile, activity_area, genre_array) values ('0000000001', 'RADWIMPS', 'hoge@hoge', 'バンドアイコンパス', 'back-ground-imageパス', 'プロフィール', 'hogehoge', '');
