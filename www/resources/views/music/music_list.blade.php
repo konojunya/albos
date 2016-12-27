@@ -21,7 +21,8 @@
 			<!-- <a href=""> -->
 				<div class="mdl-card mdl-shadow--2dp music-card" v-for="item in music">
 				  <div class="mdl-card__title mdl-card--expand image">
-				  	<img src="/images/radwimps_×と○と罪と.jpg" alt="">
+				  	<!-- <img src="/images/radwimps_×と○と罪と.jpg" alt=""> -->
+				  	<img src="@{{item.imageUrl}}" alt="">
 				  </div>
 				  <div class="mdl-card__supporting-text text">
 				    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
