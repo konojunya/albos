@@ -19,6 +19,8 @@ Route::get('/login', function () {
 Route::post('/login', 'loginAuthController@login');
 
 
+
+
 Route::get('/music', function () {
     return view('music.music_list');
 });
@@ -32,18 +34,19 @@ Route::get('/{band_id}/music', function () {
 });
 
 
-Route::get('/user/signup', function () {
+Route::get('/{user_id}', 'HomeController@index');
+
+
+Route::get('/user/signup', 'signupController@insert');
+Route::get('/user/login', function () {
     return view('');
 });
-Route::get('/user/signin', function () {
+Route::get('/user/logout', function () {
     return view('');
 });
-Route::get('/user/signout', function () {
-    return view('');
-});
-Route::get('/{user_id}', function () {
-    return view('');
-});
+// Route::get('/{user_id}', function () {
+//     return view('');
+// });
 Route::get('/{user_id}/edit', function () {
     return view('');
 });
