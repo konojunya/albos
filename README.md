@@ -8,6 +8,7 @@
 
 ---
 
+<<<<<<< HEAD
 ***俺とかずき***
 
 ## バンド
@@ -26,14 +27,16 @@
 <br>
 <br>
 
+=======
+>>>>>>> 917f8d3987de8054fdb28451ed06d3b5b09e6096
 ## 共通
 
 | Method     |  URL                           |   Detail                          |
 |:-----------|:-------------------------------|:----------------------------------|
 | GET        |  /                             |　　ＴＯＰページ　　　　　　　　　　　　　|
 | GET        |  /music                        |　　曲一覧　　　　　　　　　　　　　　　　|
-| GET        |  /music/:music_id              |　　曲詳細ページ　　　　　　　          |
-| GET        |  /:band_id/music               |　　バンドごとのアップロード済みの曲一覧　|
+| GET        |  /music/:album_id              |　　曲詳細ページ　　　　　　　          |
+| GET        |  /:band_id/album_id               |　　バンドごとのアップロード済みの曲一覧　|
 <br>
 <br>
 
@@ -41,10 +44,11 @@
 
 | Method     |  URL                           |   Detail                |
 |:-----------|:-------------------------------|:------------------------|
-| GET        |  /music/:music_id/buy          |　　購入　　　　　　　　　　　|
+| GET        |  /music/:album_id/buy          |　　購入　　　　　　　　　　　|
 | GET        |  /user/signup                  |　　ユーザ入会　　　　　　　　|
-| GET        |  /user/signin                  |　　ユーザログイン　　　　　　|
-| POST       |  /user/signout                 |　　ユーザログアウト　　　　　|
+| GET        |  /user/login                   |　　ユーザログイン　　　　　　|
+| POST       |  /user/login                   |　　ユーザログイン　　　　　　|
+| POST       |  /user/logout                  |　　ユーザログアウト　　　　　|
 | GET        |  /:user_id                     |　　ユーザマイページ　　　　　|
 | GET        |  /:user_id/edit                |　　ユーザマイページ編集　　　|
 | GET        |  /:user_id/buy-history         |　　購入済みの曲一覧　　　　　|
@@ -62,9 +66,6 @@
 | GET        |  /admin/login                  |　　管理者ページログイン　　　|
 | POST       |  /admin/logout                 |　　管理者ページログアウト　　|
 | GET        |  /admin                        |　　管理者ページ　　　　　　　|
-| GET        |  /admin/news_edit              |　　ニュース編集　　　　　　　|
-| GET        |  /admin/event_edit             |　　イベント編集　　　　　　　|
-| GET        |  /admin/magazine_edit          |　　メルマガ編集　　　　　　　|
 | GET        |  /admin/examination            |　　審査楽曲一覧　　　　　　　|
 | POST       |  /admin/examination/accept     |　　審査承認処理　　　　　　　|
 <br>
