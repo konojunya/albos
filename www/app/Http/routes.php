@@ -22,7 +22,7 @@ Route::post('/login', 'loginAuthController@login');
 
 
 Route::get('/music', function () {
-    return view('music.music_list');
+    return view('music.music_detail',["music_id" => null]);
 });
 Route::get('/music/{album_id}', 'musicController@select');
 

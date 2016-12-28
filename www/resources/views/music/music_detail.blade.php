@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<<<<<<< HEAD
 	<meta charset="UTF-8">
 	<title>{{$album_title}} - {{$band_name}}</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -66,8 +67,7 @@
 			</div>
 		</main>
 	</div>
-	
 
-	<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+  <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 </body>
 </html>
