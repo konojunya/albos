@@ -41,7 +41,7 @@
 
 | Method     |  URL                           |   Detail                |
 |:-----------|:-------------------------------|:------------------------|
-| GET        |  /music/:album_id/buy          |　　購入　　　　　　　　　　　|
+| GET        |  /music/:music_id/buy          |　　購入　　　　　　　　　　　|
 | GET        |  /user/signup                  |　　ユーザ入会　　　　　　　　|
 | GET        |  /user/login                   |　　ユーザログイン　　　　　　|
 | POST       |  /user/login                   |　　ユーザログイン　　　　　　|

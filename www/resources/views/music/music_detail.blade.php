@@ -57,7 +57,7 @@
 									<td>{{$band_name}}</td>
 									<td>{{$music_times[$key]}}</td>
 									<td>{{$prices[$key]}}</td>
-									<td><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">購入</button></td>
+									<td><a href=""><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">購入</button></a></td>
 								</tr>
 							@endforeach
 							</tbody>
