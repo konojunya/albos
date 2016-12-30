@@ -13,7 +13,22 @@ class musicController extends Controller
 {
 	public function all()
 	{
-		return view('music.music_list');
+		//アルバムテーブルからアルバムタイトル取得
+		$album_ids    = album::pluck('album_id');
+		$album_titles = album::pluck('album_title');
+		$band_ids     = album::pluck('band_id');
+
+		//バンドテーブルからバンド名取得
+		for ($i=0; $i < count($band_ids); $i++) { 
+			$band_names[$i] = band::where('band_id', $band_ids[$i])->value('band_name');
+		}
+		
+
+		return view('music.music_list')->with([
+	       	'album_ids'    => $album_ids,
+	       	'album_titles' => $album_titles,
+			'band_names'   => $band_names
+	    ]);
 	}
 
 	public function select($album_id)
