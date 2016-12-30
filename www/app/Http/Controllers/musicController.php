@@ -11,6 +11,11 @@ use App\Http\Requests;
 
 class musicController extends Controller
 {
+	public function all()
+	{
+		return view('music.music_list');
+	}
+
 	public function select($album_id)
 	{
 		//アルバムテーブルからアルバム情報取得
@@ -28,6 +33,7 @@ class musicController extends Controller
 		$band_name = band::where('band_id', $band_id)->value('band_name');
 
 		//曲テーブルから曲情報取得
+		$music_ids        = music::where('album_id', $album_id)->pluck('music_id');
 		$music_titles     = music::where('album_id', $album_id)->pluck('music_title');
 		$prices           = music::where('album_id', $album_id)->pluck('price');
 		$music_data_paths = music::where('album_id', $album_id)->pluck('music_data_path');
@@ -40,6 +46,7 @@ class musicController extends Controller
 			'property'         => $property,
 			'release'          => $release,
 			'band_name'        => $band_name,
+			'music_ids'        => $music_ids,
 			'music_titles'     => $music_titles,
 			'prices'           => $prices,
 			'music_data_paths' => $music_data_paths,

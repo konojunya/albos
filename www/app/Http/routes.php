@@ -13,22 +13,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
-Route::post('/login', 'loginAuthController@login');
+Route::auth();
+
+// Route::get('/login', function () {
+//     return view('auth.login');
+// });
+// Route::post('/login', 'loginAuthController@login');
 
 
 
-
-Route::get('/music', function () {
-    return view('music.music_list');
-});
+Route::get('/music', 'musicController@all');
 Route::get('/music/{album_id}', 'musicController@select');
 
-Route::get('/music/{album_id}/buy', function () {
-    return view('');
-});
+Route::get('/music/{music_id}/buy', 'BuyController@buy');
 Route::get('/{band_id}/music', function () {
     return view('');
 });
@@ -71,10 +68,6 @@ Route::get('/admin/examination', function () {
 Route::get('/admin/examination/accept', function () {
     return view('');
 });
-
-
-
-
 
 
 
