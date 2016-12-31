@@ -18,6 +18,7 @@ class musicController extends Controller
 		$album_titles = album::pluck('album_title');
 		$band_ids     = album::pluck('band_id');
 
+		$band_names   = array();
 		//バンドテーブルからバンド名取得
 		for ($i=0; $i < count($band_ids); $i++) { 
 			$band_names[$i] = band::where('band_id', $band_ids[$i])->value('band_name');
@@ -48,12 +49,21 @@ class musicController extends Controller
 		$band_name = band::where('band_id', $band_id)->value('band_name');
 
 		//曲テーブルから曲情報取得
-		$music_ids        = music::where('album_id', $album_id)->pluck('music_id');
-		$music_titles     = music::where('album_id', $album_id)->pluck('music_title');
-		$prices           = music::where('album_id', $album_id)->pluck('price');
-		$music_data_paths = music::where('album_id', $album_id)->pluck('music_data_path');
-		$music_times      = music::where('album_id', $album_id)->pluck('music_time');
-		//↑SELECT文を4回投げてるなら重いから変えたほうが良い
+		$musics = music::where('album_id', $album_id)->get();
+		$music_ids        = array();
+		$music_titles     = array();
+		$prices           = array();
+		$music_data_paths = array();
+		$music_times      = array();
+		$i = 0;
+		foreach ($musics as $music) {
+			$music_ids[$i]        = $music->music_id;
+			$music_titles[$i]     = $music->music_title;
+			$prices[$i]           = $music->price;
+			$music_data_paths[$i] = $music->music_data_path;
+			$music_times[$i]      = $music->music_time;
+			$i++;
+		}
 
 		return view('music.music_detail')->with([
 	       	'album_title'      => $album_title,

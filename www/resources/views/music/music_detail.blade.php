@@ -6,6 +6,11 @@
 
 @section('css')
 <link rel="stylesheet" href="/css/music_detail.css">
+<style>
+	.card-image.mdl-card {
+		background: url('{{$artwork_path}}') center / cover;
+	}
+</style>
 @endsection
 
 @section('content')

@@ -1,7 +1,7 @@
 /*
 *		曲一覧
 */
-new Vue({
+var vm = new Vue({
 	el: "#app",
 	data: {
 		music: [
@@ -31,3 +31,5 @@ var $grid = $("#app").masonry({
 $grid.imagesLoaded().progress(function(){
 	$grid.masonry("layout")
 })
+
+console.log("hoge")
