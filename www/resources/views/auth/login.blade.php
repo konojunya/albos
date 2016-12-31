@@ -5,7 +5,7 @@ login | albos
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="/css/login.css">
+<link rel="stylesheet" href="/assets/css/login.css">
 @endsection
 
 @section('content')

@@ -31,3 +31,5 @@ var $grid = $("#app").masonry({
 $grid.imagesLoaded().progress(function(){
 	$grid.masonry("layout")
 })
+
+console.log(console)

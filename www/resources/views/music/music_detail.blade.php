@@ -5,7 +5,7 @@
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="/css/music_detail.css">
+<link rel="stylesheet" href="/assets/css/music_detail.css">
 @endsection
 
 @section('content')
