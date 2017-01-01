@@ -27,8 +27,7 @@ class musicController extends Controller
 
 		return view('music.music_list')->with([
 	       	'album_ids'    => $album_ids,
-	       	'album_titles' => $album_titles,
-			'band_names'   => $band_names
+	       	'album_titles' => $album_titles
 	    ]);
 	}
 

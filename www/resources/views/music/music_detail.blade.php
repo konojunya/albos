@@ -5,7 +5,8 @@
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="/css/music_detail.css">
+
+<link rel="stylesheet" href="/assets/css/music_detail.css">
 <style>
 	.card-image.mdl-card {
 		background: url('{{$artwork_path}}') center / cover;
