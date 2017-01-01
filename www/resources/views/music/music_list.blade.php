@@ -31,11 +31,11 @@
 	  </main>
 	</div>
 
-	<script src="/javascript/material.min.js"></script>
-	<script src="/javascript/jquery.min.js"></script>
-	<script src="/javascript/vue.min.js"></script>
-	<script src="/javascript/masonry.pkgd.min.js"></script>
-	<script src="/javascript/imagesloaded.pkgd.min.js"></script>
+	<script type="text/javascript" src="{{{asset('/javascript/material.min.js')}}}"></script>
+	<script type="text/javascript" src="{{{asset('/javascript/jquery.min.js')}}}"></script>
+	<script type="text/javascript" src="{{{asset('/javascript/vue.min.js')}}}"></script>
+	<script type="text/javascript" src="{{{asset('/javascript/masonry.pkgd.min.js')}}}"></script>
+	<script type="text/javascript" src="{{{asset('/javascript/imagesloaded.pkgd.min.js')}}}"></script>
 	<script src="/javascript/music_list.js"></script>
 </body>
 </html>
