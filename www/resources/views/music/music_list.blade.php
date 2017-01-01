@@ -1,8 +1,22 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+	<link rel="stylesheet" href="/css/material.min.css">
+	<link rel="stylesheet" href="/css/music_list.css">
+</head>
+<body>
 
-@section('title')
-曲一覧 | albos
-@endsection
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	  <header class="mdl-layout__header">
+	    <div class="mdl-layout__header-row">
+	      <span class="mdl-layout-title">Music</span>
+	    </div>
+	  </header>
+	  <main class="mdl-layout__content">
+	    <div class="page-content" id="app">
 
 @section('css')
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -23,7 +37,6 @@
 		    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 		  </div>
 		</div>
-
 	</div>
 </main>
 @endsection
@@ -35,4 +48,5 @@
 <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
 <script src="/assets/js/music_list.js"></script>
 @endsection
-
+</body>
+</html>
