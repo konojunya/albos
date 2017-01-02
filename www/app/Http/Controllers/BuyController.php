@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\sales_description;
+use App\album;
+use App\band;
+use App\music;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -18,8 +23,57 @@ class BuyController extends Controller
         $this->middleware('auth');
     }
 
-    public function buy()
+    public function buy(Request $request, $music_id)
     {
-        return '購入するための処理を書く';
+        //購入処理を行うユーザーのユーザーIDを取得
+        $id = $request->user()->id;
+
+        //売り上げ明細にインサート
+        $this->insert($id ,$music_id);
+
+        //曲情報の取得
+        $music_data = music::where('music_id', $music_id);
+
+        //アルバムIDを取得
+        $album_id  = $music_data->value('album_id');
+        //曲名の取得
+        $music_title = $music_data->value('music_title');
+        //曲データ保存場所のパスを取得
+        $music_data_path = $music_data->value('music_data_path');
+
+        //アルバムIDからバンドIDを取得
+        $band_id = album::where('album_id', $album_id)->value('band_id');
+
+        //バンドIDからバンド名を取得
+        $band_name = band::where('band_id', $band_id)->value('band_name');
+
+        //パスを完全なものにする
+        $pathToFile = storage_path($music_data_path);
+
+        //ダウンロード時のファイル名を作成
+        $file_name = $music_title.' - '.$band_name.'.mp3';
+
+        return response()->download($pathToFile, $file_name);
+    }
+
+    private function insert($id, $music_id)
+    {
+        sales_description::insert(
+            [
+                'user_id' => $id,
+                'music_id' => $music_id,
+                'purchase_date' => Carbon::now()
+            ]
+        );
+    }
+
+    private function payment()
+    {
+        //カード決済
+    }
+
+    private function creditCheck()
+    {
+        //まさる堂のクレジットカードチェッカーにカード番号を送る
     }
 }

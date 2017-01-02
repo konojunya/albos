@@ -26,6 +26,7 @@ Route::get('/music', 'musicController@all');
 Route::get('/music/{album_id}', 'musicController@select');
 
 Route::get('/music/{music_id}/buy', 'BuyController@buy');
+Route::get('/music/{music_id}/download', 'BuyController@download');
 Route::get('/{band_id}/music', function () {
     return view('');
 });
