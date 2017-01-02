@@ -13,21 +13,39 @@ class musicController extends Controller
 {
 	public function all()
 	{
+		//アルバムテーブルからアルバム情報取得
+		$albums = album::get();
+		$album_ids     = array();
+		$album_titles  = array();
+		$band_ids      = array();
+		$artwork_paths = array();
+
+		$i = 0;
+		foreach ($albums as $album) {
+			$album_ids[$i]     = $album->album_id;
+			$album_titles[$i]  = $album->album_title;
+			$artwork_paths[$i] = $album->artwork_path;
+			$band_ids[$i]      = $album->band_id;
+			$i++;
+		}
+
 		//アルバムテーブルからアルバムタイトル取得
-		$album_ids    = album::pluck('album_id');
-		$album_titles = album::pluck('album_title');
-		$band_ids     = album::pluck('band_id');
+		// $album_ids    = album::pluck('album_id');
+		// $album_titles = album::pluck('album_title');
+		// $band_ids     = album::pluck('band_id');
 
 		$band_names   = array();
-		//バンドテーブルからバンド名取得
+		// バンドテーブルからバンド名取得
 		for ($i=0; $i < count($band_ids); $i++) { 
 			$band_names[$i] = band::where('band_id', $band_ids[$i])->value('band_name');
 		}
 		
 
 		return view('music.music_list')->with([
-	       	'album_ids'    => $album_ids,
-	       	'album_titles' => $album_titles
+	       	'album_ids'     => $album_ids,
+	       	'artwork_paths' => $artwork_paths,
+	       	'album_titles'  => $album_titles,
+	       	'band_names'    => $band_names
 	    ]);
 	}
 

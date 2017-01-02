@@ -15,14 +15,16 @@
 <main class="mdl-layout__content">
 	<div class="page-content" id="app">
 
-		<div class="mdl-card mdl-shadow--2dp music-card" v-for="item in music">
-		  <div class="mdl-card__title mdl-card--expand image">
-		  	<img src="@{{item.imageUrl}}" alt="">
-		  </div>
-		  <div class="mdl-card__supporting-text text">
-		    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-		  </div>
-		</div>
+		<a href="">
+			<div class="mdl-card mdl-shadow--2dp music-card" v-for="item in music">
+			  	<div class="mdl-card__title mdl-card--expand image">
+			  		<img src="@{{item.imageUrl}}" alt="">
+			  	</div>
+			  	<div class="mdl-card__supporting-text text">
+			    	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			  	</div>
+			</div>
+		</a>
 	</div>
 </main>
 @endsection
@@ -32,5 +34,17 @@
 <script src="/assets/js/vue.min.js"></script>
 <script src="/assets/js/masonry.pkgd.min.js"></script>
 <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+<script>
+	var vm = new Vue({
+		el: "#app",
+		data: {
+			music: [
+				@foreach ($album_ids as $key => $album_id)
+				{ imageUrl: "{{ $artwork_paths[$key] }}" },
+				@endforeach
+			]
+		}
+	})
+</script>
 <script src="/assets/js/music_list.js"></script>
 @endsection
