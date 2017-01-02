@@ -63,6 +63,7 @@ login | albos
 
 			   		<div class="mdl-card__actions mdl-card--border">
 			   			<input type="submit" value="ログインする" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect login-btn">
+			   			<a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
 					</div>
 						
 				</form>

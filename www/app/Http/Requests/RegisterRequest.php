@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\test_user;
 use App\Http\Requests\Request;
 
 class RegisterRequest extends Request
@@ -24,10 +25,12 @@ class RegisterRequest extends Request
     public function rules()
     {
         return [
+            'user_id' => 'required|max:16',
             'name' => 'required|max:10',
-            'email' => 'required',
+            'email' => 'required|email|unique:test_user',
             'password' => 'required|min:8|confirmed',
             'password_confirmation' => 'required|min:8',
+            'credit_card' => 'required',
         ];
     }
 }

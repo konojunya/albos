@@ -18,6 +18,8 @@ class TestUserTable extends Migration
             $table->string('password');
             $table->string('credit_card_number');
             $table->string('mail_address');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
