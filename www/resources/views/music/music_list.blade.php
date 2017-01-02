@@ -15,16 +15,16 @@
 <main class="mdl-layout__content">
 	<div class="page-content" id="app">
 
-		<a href="">
-			<div class="mdl-card mdl-shadow--2dp music-card" v-for="item in music">
+		<!-- <a href="/music/@{{item.url}}"> -->
+			<a href="/music/@{{item.url}}" class="mdl-card mdl-shadow--2dp music-card" v-for="item in music">
 			  	<div class="mdl-card__title mdl-card--expand image">
 			  		<img src="@{{item.imageUrl}}" alt="">
 			  	</div>
 			  	<div class="mdl-card__supporting-text text">
-			    	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			    	@{{item.content}}
 			  	</div>
-			</div>
-		</a>
+			</a>
+		<!-- </a> -->
 	</div>
 </main>
 @endsection
@@ -40,7 +40,11 @@
 		data: {
 			music: [
 				@foreach ($album_ids as $key => $album_id)
-				{ imageUrl: "{{ $artwork_paths[$key] }}" },
+				{
+					url     : "{{ $album_ids[$key] }}",
+					imageUrl: "{{ $artwork_paths[$key] }}" ,
+					content : "{{ $album_titles[$key] }} - {{ $band_names[$key] }}"
+				},
 				@endforeach
 			]
 		}
