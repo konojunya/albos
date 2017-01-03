@@ -98,6 +98,7 @@ class musicController extends Controller
 
 	public function hoge(){
 		return array(
+				"path" => storage_path()."/music_data/0000000001.mp3",
         "name" => "konojunya",
         "age" => 19
     );
