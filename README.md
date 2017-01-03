@@ -53,7 +53,15 @@
 ```
 req: no
 res: {
-	
+  musics: [
+    {
+    	id: 0,
+    	artwork_path: "/hogehoge",
+    	title: "Title",
+    	band_name: "かずきくらっしゃ〜〜ず"
+   	}
+   	...
+  ]
 }
 ```
 
