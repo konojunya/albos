@@ -117,7 +117,6 @@ res: {
 ```
 req: user_id
 res: {
-	
 }
 ```
 
