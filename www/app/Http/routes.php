@@ -19,31 +19,26 @@ Route::get('/music', 'musicController@all');
 Route::get('/music/{album_id}', 'musicController@select');
 
 Route::get('/music/{music_id}/buy', 'BuyController@buy');
-Route::get('/{band_id}/music', function () {
+
+
+Route::get('/user/{user_id}/home', 'HomeController@index');
+
+
+Route::get('/user/{user_id}/edit', function () {
     return view('');
 });
-
-
-Route::get('/{user_id}', 'HomeController@index');
-
-
-Route::get('/{user_id}/edit', function () {
-    return view('');
-});
-Route::get('/{user_id}/buy_history', function () {
+Route::get('/user/{user_id}/buy_history', function () {
     return view('');
 });
 
 // API
-Route::get("/api/music_list","musicController@hoge");
+Route::get('/api/music','musicController@apiAll');
+Route::get('/api/music/detail','musicController@apiSelect');
+Route::get('/api/band/{band_id}/music','musicController@apiBand');
 
-Route::get("/api/music","musicController@all");
-Route::get("/api/music/detail","musicController@select");
-Route::get("/api/band/{band_id}/music","musicController@band");
-
-Route::get("/api/user/home","HomeController@index");
-Route::get("/api/user/home/edit","HomeController@edit");
-Route::get("/api/user/home/history","HomeController@history");
+Route::get('/api/user/home','HomeController@apiIndex');
+Route::get('/api/user/home/edit','HomeController@apiEdit');
+Route::get('/api/user/home/history','HomeController@apiHistory');
 
 
 

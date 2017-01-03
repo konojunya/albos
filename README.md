@@ -26,7 +26,7 @@ d# SD22
 | Method     |  URL                           |   Detail                |
 |:-----------|:-------------------------------|:------------------------|
 | GET        |  /music/:music_id/buy          |　　購入　　　　　　　　　　　|
-| GET        |  /user/:user_id                |　　ユーザマイページ　　　　　|
+| GET        |  /user/:user_id/home           |　　ユーザマイページ　　　　　|
 | GET        |  /user/:user_id/edit           |　　ユーザマイページ編集　　　|
 | GET        |  /user/:user_id/buy-history    |　　購入済みの曲一覧　　　　　|
 <br>
@@ -120,13 +120,12 @@ res: {
 `/api/user/home`
 
 ```
-req: user_id
+req: no
 res: {
 	user: [
     {
       user_id: "hogeruumu",
       user_name: "きのーご",
-      password: "******",
       credit_card_number: "1234-5678-9012-3456",
       email: "hoge@example.com"
     }
@@ -137,13 +136,13 @@ res: {
 `/api/user/home/edit`
 
 ```
-req: user_id,updates
+req: updates
 res: {
 	user: [
     {
       user_id: "hogeruumu",
       user_name: "きのーご",
-      password: "******",
+      password: "*******",
       credit_card_number: "1234-5678-9012-3456",
       email: "hoge@example.com"
     }
@@ -154,7 +153,7 @@ res: {
 `/api/user/home/history`
 
 ```
-req: user_id
+req: no
 res: {
 	history: [
     {

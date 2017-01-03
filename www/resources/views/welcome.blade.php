@@ -15,8 +15,8 @@ TOP | albos
 (function($){
 
 	$.ajax({
-		url: "/api/music_list",
-		type: "GET"
+		url: "/api/music",
+		type: "GET",
 	})
 	.done(function(data){
 		console.log(data)
