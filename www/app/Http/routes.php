@@ -53,22 +53,5 @@ Route::get('/{user_id}/buy_history', function () {
 });
 
 
-//管理者
-Route::get('/admin', function () {
-    return view('');
-});
-Route::get('/admin/login', function () {
-    return view('');
-});
-Route::get('/admin/logout', function () {
-    return view('');
-});
-Route::get('/admin/examination', function () {
-    return view('');
-});
-Route::get('/admin/examination/accept', function () {
-    return view('');
-});
-
-
-
+// API
+Route::get("/api/music_list","musicController@hoge");

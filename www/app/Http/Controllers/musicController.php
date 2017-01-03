@@ -95,4 +95,11 @@ class musicController extends Controller
 			'music_times'      => $music_times
 	    ]);
 	}
+
+	public function hoge(){
+		return array(
+        "name" => "konojunya",
+        "age" => 19
+    );
+	}
 }
