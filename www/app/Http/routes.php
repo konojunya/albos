@@ -36,3 +36,15 @@ Route::get('/{user_id}/buy_history', function () {
 
 // API
 Route::get("/api/music_list","musicController@hoge");
+
+Route::get("/api/music","musicController@all");
+Route::get("/api/music/detail","musicController@select");
+Route::get("/api/band/{band_id}/music","musicController@band");
+
+Route::get("/api/user/home","HomeController@index");
+Route::get("/api/user/home/edit","HomeController@edit");
+Route::get("/api/user/home/history","HomeController@history");
+
+
+
+

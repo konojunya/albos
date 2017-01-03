@@ -1,4 +1,4 @@
-# SD22
+d# SD22
 ## 画面設計
 
 - 11/02の内容
@@ -40,9 +40,9 @@
 
 | Method     |  URL                           |   Detail                          |
 |:-----------|:-------------------------------|:----------------------------------|
-| GET        |  /api/music                    |　　曲一覧　　　　　　　　　　　　　　　　|
-| GET        |  /api/music/detail             |　　曲詳細ページ　　　　　　　          |
-| GET        |  /api/band/:band_id/music      |　　バンドごとのアップロード済みの曲一覧　|
+| GET        |  /api/music                    |　　曲一覧　　　　　　　　　　　　　　　|
+| GET        |  /api/music/detail             |　　曲詳細ページ　　　　　　　　　　　　|
+| GET        |  /api/band/:band_id/music      |　　バンドごとのアップロード済みの曲一覧|
 
 `/api/music`
 
