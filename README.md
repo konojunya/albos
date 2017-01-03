@@ -1,4 +1,4 @@
-# SD22
+d# SD22
 ## 画面設計
 
 - 11/02の内容
@@ -26,11 +26,7 @@
 | Method     |  URL                           |   Detail                |
 |:-----------|:-------------------------------|:------------------------|
 | GET        |  /music/:music_id/buy          |　　購入　　　　　　　　　　　|
-| GET        |  /user/signup                  |　　ユーザ入会　　　　　　　　|
-| GET        |  /user/login                   |　　ユーザログイン　　　　　　|
-| POST       |  /user/login                   |　　ユーザログイン　　　　　　|
-| POST       |  /user/logout                  |　　ユーザログアウト　　　　　|
-| GET        |  /user/:user_id                |　　ユーザマイページ　　　　　|
+| GET        |  /user/:user_id/home           |　　ユーザマイページ　　　　　|
 | GET        |  /user/:user_id/edit           |　　ユーザマイページ編集　　　|
 | GET        |  /user/:user_id/buy-history    |　　購入済みの曲一覧　　　　　|
 <br>
@@ -44,9 +40,9 @@
 
 | Method     |  URL                           |   Detail                          |
 |:-----------|:-------------------------------|:----------------------------------|
-| GET        |  /api/music                    |　　曲一覧　　　　　　　　　　　　　　　　|
-| GET        |  /api/music/detail             |　　曲詳細ページ　　　　　　　          |
-| GET        |  /api/band/                    |　　バンドごとのアップロード済みの曲一覧　|
+| GET        |  /api/music                    |　　曲一覧　　　　　　　　　　　　　　　|
+| GET        |  /api/music/detail             |　　曲詳細ページ　　　　　　　　　　　　|
+| GET        |  /api/band/:band_id/music      |　　バンドごとのアップロード済みの曲一覧|
 
 `/api/music`
 
@@ -92,12 +88,21 @@ res: {
 }
 ```
 
-`/api/band`
+↓バンドページ無いからいらないかも
+`/api/band/:band_id/music`
 
 ```
-req: band_id,album_id
+req: band_id
 res: {
-	
+	albums: [
+    {
+      album_id: "0000000001",
+      artwork_path: "/assets/images/0000000001.jpg",
+      album_title: "Title",
+      band_name: "かずきくらっしゃ〜〜ず"
+    }
+    ...
+  ]
 }
 ```
 
@@ -108,33 +113,57 @@ res: {
 
 | Method     |  URL                           |   Detail                |
 |:-----------|:-------------------------------|:------------------------|
-| GET        |  /api/user/detail              |　　ユーザマイページ　　　　　|
-| POST       |  /api/user/detail/edit         |　　ユーザマイページ編集　　　|
-| GET        |  /api/user/detail/history      |　　購入済みの曲一覧　　　　　|
+| GET        |  /api/user/home              |　　ユーザマイページ　　　　　|
+| POST       |  /api/user/home/edit         |　　ユーザマイページ編集　　　|
+| GET        |  /api/user/home/history      |　　購入済みの曲一覧　　　　　|
 
-`/api/user/detail`
+`/api/user/home`
 
 ```
-req: user_id
+req: no
 res: {
+	user: [
+    {
+      user_id: "hogeruumu",
+      user_name: "きのーご",
+      credit_card_number: "1234-5678-9012-3456",
+      email: "hoge@example.com"
+    }
+  ]
 }
 ```
 
-`/api/user/detail/edit`
+`/api/user/home/edit`
 
 ```
-req: user_id,updates
+req: updates
 res: {
-	
+	user: [
+    {
+      user_id: "hogeruumu",
+      user_name: "きのーご",
+      password: "*******",
+      credit_card_number: "1234-5678-9012-3456",
+      email: "hoge@example.com"
+    }
+  ]
 }
 ```
 
-`/api/user/detail/history`
+`/api/user/home/history`
 
 ```
-req: user_id
+req: no
 res: {
-	
+	history: [
+    {
+      music_title: "いえない",
+      album_title: "×と◯と罪と",
+      band_name: "RADWIMPS",
+      price: "250",
+      purchase_date: "2017-01-02 23:58:32"
+    }
+  ]
 }
 ```
 
