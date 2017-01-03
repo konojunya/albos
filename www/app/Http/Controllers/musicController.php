@@ -98,8 +98,8 @@ class musicController extends Controller
 
 	public function hoge(){
 		return array(
-        "name" => "konojunya",
-        "age" => 19
-    );
+	        "name" => "konojunya",
+	        "age" => 19
+	    );
 	}
 }
