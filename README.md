@@ -53,11 +53,11 @@
 ```
 req: no
 res: {
-  musics: [
+  albums: [
     {
-    	id: 0,
-    	artwork_path: "/hogehoge",
-    	title: "Title",
+    	album_id: "0000000001",
+    	artwork_path: "/assets/images/0000000001.jpg",
+    	album_title: "Title",
     	band_name: "かずきくらっしゃ〜〜ず"
    	}
    	...
@@ -70,7 +70,25 @@ res: {
 ```
 req: album_id
 res: {
-	
+	album: [
+    {
+      album_title: "Title",
+      artwork_path: "music_data/0000000001.mp3",
+      property: "アルバム",
+      release: "2013-01-01",
+      band_name: "かずきくらっしゃ〜〜ず",
+      musics: [
+        {
+          music_id: "0000000001",
+          music_title: "Title",
+          price: 250,
+          music_data_paths: "music_data/0000000001.mp3",
+          music_time: "00:05:13"
+        }
+      ]
+      ...
+    }
+  ]
 }
 ```
 
