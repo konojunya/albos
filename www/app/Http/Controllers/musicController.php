@@ -83,7 +83,7 @@ class musicController extends Controller
 		}
 
 		return view('music.music_detail')->with([
-	       	'album_title'      => $album_title,
+			'album_title'      => $album_title,
 			'artwork_path'     => $artwork_path,
 			'property'         => $property,
 			'release'          => $release,
@@ -93,7 +93,7 @@ class musicController extends Controller
 			'prices'           => $prices,
 			'music_data_paths' => $music_data_paths,
 			'music_times'      => $music_times
-	    ]);
+		]);
 	}
 
 	public function hoge(){
