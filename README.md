@@ -53,7 +53,7 @@
 ```
 req: no
 res: {
-  music: [
+  musics: [
     {
     	id: 0,
     	artwork_path: "/hogehoge",
