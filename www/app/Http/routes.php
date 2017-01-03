@@ -52,6 +52,5 @@ Route::get('/{user_id}/buy_history', function () {
     return view('');
 });
 
-
 // API
 Route::get("/api/music_list","musicController@hoge");
