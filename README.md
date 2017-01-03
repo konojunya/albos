@@ -10,22 +10,6 @@
 
 ***俺とかずき***
 
-## バンド
-
-| Method     |  URL                           |   Detail               |
-|:-----------|:-------------------------------|:-----------------------|
-| GET        |  /band/signup                  |　　バンド入会　　　　　　　|
-| GET        |  /band/signin                  |　　バンドログイン　　　　　|
-| POST       |  /band/signout                 |　　バンドログアウト　　　　|
-| GET        |  /:band_id                     |　　バンドマイページ　　　　|
-| GET        |  /:band_id/edit                |　　バンドマイページ編集　　|
-| GET        |  /:band_id/upload              |　　曲のアップロード　　　　|
-| GET        |  /:band_id/upload/status       |　　曲の審査状態　　　　　　|
-| GET        |  /:band_id/music/edit          |　　編集　　　　　　　　　　|
-| POST       |  /:band_id/music/delete        |　　曲の削除　　　　　　　　|
-<br>
-<br>
-
 ## 共通
 
 | Method     |  URL                           |   Detail                          |
@@ -46,9 +30,9 @@
 | GET        |  /user/login                   |　　ユーザログイン　　　　　　|
 | POST       |  /user/login                   |　　ユーザログイン　　　　　　|
 | POST       |  /user/logout                  |　　ユーザログアウト　　　　　|
-| GET        |  /:user_id                     |　　ユーザマイページ　　　　　|
-| GET        |  /:user_id/edit                |　　ユーザマイページ編集　　　|
-| GET        |  /:user_id/buy-history         |　　購入済みの曲一覧　　　　　|
+| GET        |  /user/:user_id                |　　ユーザマイページ　　　　　|
+| GET        |  /user/:user_id/edit           |　　ユーザマイページ編集　　　|
+| GET        |  /user/:user_id/buy-history    |　　購入済みの曲一覧　　　　　|
 <br>
 <br>
 
