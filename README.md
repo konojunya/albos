@@ -10,22 +10,6 @@
 
 ***俺とかずき***
 
-## バンド
-
-| Method     |  URL                           |   Detail               |
-|:-----------|:-------------------------------|:-----------------------|
-| GET        |  /band/signup                  |　　バンド入会　　　　　　　|
-| GET        |  /band/signin                  |　　バンドログイン　　　　　|
-| POST       |  /band/signout                 |　　バンドログアウト　　　　|
-| GET        |  /:band_id                     |　　バンドマイページ　　　　|
-| GET        |  /:band_id/edit                |　　バンドマイページ編集　　|
-| GET        |  /:band_id/upload              |　　曲のアップロード　　　　|
-| GET        |  /:band_id/upload/status       |　　曲の審査状態　　　　　　|
-| GET        |  /:band_id/music/edit          |　　編集　　　　　　　　　　|
-| POST       |  /:band_id/music/delete        |　　曲の削除　　　　　　　　|
-<br>
-<br>
-
 ## 共通
 
 | Method     |  URL                           |   Detail                          |
@@ -33,7 +17,7 @@
 | GET        |  /                             |　　ＴＯＰページ　　　　　　　　　　　　　|
 | GET        |  /music                        |　　曲一覧　　　　　　　　　　　　　　　　|
 | GET        |  /music/:album_id              |　　曲詳細ページ　　　　　　　          |
-| GET        |  /:band_id/album_id               |　　バンドごとのアップロード済みの曲一覧　|
+| GET        |  /:band_id/album_id            |　　バンドごとのアップロード済みの曲一覧　|
 <br>
 <br>
 
@@ -46,9 +30,99 @@
 | GET        |  /user/login                   |　　ユーザログイン　　　　　　|
 | POST       |  /user/login                   |　　ユーザログイン　　　　　　|
 | POST       |  /user/logout                  |　　ユーザログアウト　　　　　|
-| GET        |  /:user_id                     |　　ユーザマイページ　　　　　|
-| GET        |  /:user_id/edit                |　　ユーザマイページ編集　　　|
-| GET        |  /:user_id/buy-history         |　　購入済みの曲一覧　　　　　|
+| GET        |  /user/:user_id                |　　ユーザマイページ　　　　　|
+| GET        |  /user/:user_id/edit           |　　ユーザマイページ編集　　　|
+| GET        |  /user/:user_id/buy-history    |　　購入済みの曲一覧　　　　　|
+<br>
+<br>
+
+---
+
+***API***
+
+## 共通
+
+| Method     |  URL                           |   Detail                          |
+|:-----------|:-------------------------------|:----------------------------------|
+| GET        |  /api/music                    |　　曲一覧　　　　　　　　　　　　　　　　|
+| GET        |  /api/music/detail             |　　曲詳細ページ　　　　　　　          |
+| GET        |  /api/band/                    |　　バンドごとのアップロード済みの曲一覧　|
+
+`/api/music`
+
+```
+req: no
+res: {
+	
+}
+```
+
+`/api/music/detail`
+
+```
+req: album_id
+res: {
+	
+}
+```
+
+`/api/band`
+
+```
+req: band_id,album_id
+res: {
+	
+}
+```
+
+<br>
+<br>
+
+## ユーザー
+
+| Method     |  URL                           |   Detail                |
+|:-----------|:-------------------------------|:------------------------|
+| POST       |  /api/music/buy                |　　購入　　　　　　　　　　　|
+| GET        |  /api/user/detail              |　　ユーザマイページ　　　　　|
+| POST       |  /api/user/detail/edit         |　　ユーザマイページ編集　　　|
+| GET        |  /api/user/detail/history      |　　購入済みの曲一覧　　　　　|
+
+`/api/music_buy`
+
+```
+req: user_id,album_id
+res: {
+	
+}
+```
+
+`/api/user/detail`
+
+```
+req: user_id
+res: {
+	
+}
+```
+
+`/api/user/detail/edit`
+
+```
+req: user_id,updates
+res: {
+	
+}
+```
+
+`/api/user/detail/history`
+
+```
+req: user_id
+res: {
+	
+}
+```
+
 <br>
 <br>
 
