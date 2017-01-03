@@ -157,12 +157,13 @@ req: no
 res: {
 	history: [
     {
-      music_title: "いえない",
       album_title: "×と◯と罪と",
       band_name: "RADWIMPS",
+      music_title: "いえない",
       price: "250",
       purchase_date: "2017-01-02 23:58:32"
     }
+    ...
   ]
 }
 ```
