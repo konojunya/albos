@@ -44,6 +44,7 @@
 				<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
 					<thead>
 						<tr>
+							<th></th>
 							<th class="mdl-data-table__cell--non-numeric">タイトル</th>
 							<th>アーティスト</th>
 							<th>時間</th>
@@ -53,6 +54,7 @@
 					<tbody>
 					@foreach ($music_titles as $key => $music_title)
 					    <tr>
+					    	<td></td>
 							<td class="mdl-data-table__cell--non-numeric">{{$music_title}}</td>
 							<td>{{$band_name}}</td>
 							<td>{{$music_times[$key]}}</td>
@@ -62,6 +64,10 @@
 					@endforeach
 					</tbody>
 				</table>
+				<audio controls>
+				    <source src="{{ storage_path('music_data/0000000001.mp3') }}" type="audio/mp3">
+				</audio>
+				{{ storage_path('music_data/0000000001.mp3') }}
 			</div>
 		</div>
 	</div>

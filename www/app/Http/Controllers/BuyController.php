@@ -28,14 +28,23 @@ class BuyController extends Controller
         //購入処理を行うユーザーのユーザーIDを取得
         $id = $request->user()->id;
 
-        //売り上げ明細にインサート
-        $this->insert($id ,$music_id);
-
         //曲情報の取得
         $music_data = music::where('music_id', $music_id);
 
         //アルバムIDを取得
         $album_id  = $music_data->value('album_id');
+
+        //すでに購入済みか確認
+        if(sales_description::where([
+                    ['user_id', $id],
+                    ['music_id', $music_id]
+                ])->count()){
+            return redirect('/music/'.$album_id);
+        }
+
+        //売り上げ明細にインサート
+        $this->insert($id ,$music_id);
+
         //曲名の取得
         $music_title = $music_data->value('music_title');
         //曲データ保存場所のパスを取得
