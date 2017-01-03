@@ -24,12 +24,12 @@ Route::get('/music/{music_id}/buy', 'BuyController@buy');
 Route::get('/user/{user_id}/home', 'HomeController@index');
 
 
-Route::get('/user/{user_id}/edit', function () {
-    return view('');
-});
-Route::get('/user/{user_id}/buy_history', function () {
-    return view('');
-});
+// Route::get('/user/{user_id}/edit', function () {
+//     return view('');
+// });
+// Route::get('/user/{user_id}/buy_history', function () {
+//     return view('');
+// });
 
 // API
 Route::get('/api/music','musicController@apiAll');
@@ -37,8 +37,8 @@ Route::get('/api/music/detail','musicController@apiSelect');
 Route::get('/api/band/{band_id}/music','musicController@apiBand');
 
 Route::get('/api/user/home','HomeController@apiIndex');
-Route::get('/api/user/home/edit','HomeController@apiEdit');
-Route::get('/api/user/home/history','HomeController@apiHistory');
+// Route::get('/api/user/home/edit','HomeController@apiEdit');
+// Route::get('/api/user/home/history','HomeController@apiHistory');
 
 
 
