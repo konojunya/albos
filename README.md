@@ -108,19 +108,9 @@ res: {
 
 | Method     |  URL                           |   Detail                |
 |:-----------|:-------------------------------|:------------------------|
-| POST       |  /api/music/buy                |　　購入　　　　　　　　　　　|
 | GET        |  /api/user/detail              |　　ユーザマイページ　　　　　|
 | POST       |  /api/user/detail/edit         |　　ユーザマイページ編集　　　|
 | GET        |  /api/user/detail/history      |　　購入済みの曲一覧　　　　　|
-
-`/api/music_buy`
-
-```
-req: user_id,album_id
-res: {
-	
-}
-```
 
 `/api/user/detail`
 
