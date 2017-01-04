@@ -34,7 +34,7 @@ Route::get('/user/{user_id}/home', 'HomeController@index');
 // API
 Route::get('/api/music','musicController@apiAll');
 Route::get('/api/music/detail','musicController@apiSelect');
-Route::get('/api/band/{band_id}/music','musicController@apiBand');
+// Route::get('/api/band/{band_id}/music','musicController@apiBand');
 
 Route::get('/api/user/home','HomeController@apiIndex');
 Route::get('/api/user/home/edit','HomeController@apiEdit');
