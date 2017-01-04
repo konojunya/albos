@@ -17,7 +17,7 @@
 | GET        |  /                             |　　ＴＯＰページ　　　　　　　　　　　　　|
 | GET        |  /music                        |　　曲一覧　　　　　　　　　　　　　　　　|
 | GET        |  /music/:album_id              |　　曲詳細ページ　　　　　　　          |
-| GET        |  /:band_id/album_id            |　　バンドごとのアップロード済みの曲一覧　|
+| GET        |  /band/:band_id/album_id       |　　バンドごとのアップロード済みの曲一覧　|
 <br>
 <br>
 
@@ -26,9 +26,9 @@
 | Method     |  URL                           |   Detail                |
 |:-----------|:-------------------------------|:------------------------|
 | GET        |  /music/:music_id/buy          |　　購入　　　　　　　　　　　|
-| GET        |  /user/:user_id/home           |　　ユーザマイページ　　　　　|
-| GET        |  /user/:user_id/edit           |　　ユーザマイページ編集　　　|
-| GET        |  /user/:user_id/buy-history    |　　購入済みの曲一覧　　　　　|
+| GET        |  /user/home                    |　　ユーザマイページ　　　　　|
+| GET        |  /user/home/edit               |　　ユーザマイページ編集　　　|
+| GET        |  /user/home/history            |　　購入済みの曲一覧　　　　　|
 <br>
 <br>
 
@@ -113,9 +113,9 @@ res: {
 
 | Method     |  URL                           |   Detail                |
 |:-----------|:-------------------------------|:------------------------|
-| GET        |  /api/user/home              |　　ユーザマイページ　　　　　|
-| POST       |  /api/user/home/edit         |　　ユーザマイページ編集　　　|
-| GET        |  /api/user/home/history      |　　購入済みの曲一覧　　　　　|
+| GET        |  /api/user/home                |　　ユーザマイページ　　　　|
+| POST       |  /api/user/home/edit           |　　ユーザマイページ編集　　|
+| GET        |  /api/user/home/history        |　　購入済みの曲一覧　　　　|
 
 `/api/user/home`
 
@@ -144,7 +144,8 @@ res: {
       user_name: "きのーご",
       password: "*******",
       credit_card_number: "1234-5678-9012-3456",
-      email: "hoge@example.com"
+      email: "hoge@example.com",
+      password: "111111"
     }
   ]
 }
