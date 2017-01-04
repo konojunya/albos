@@ -22,15 +22,14 @@ TOP | albos
         email: "kinokoruumu416@yahoo.co.jp",
         password: "111111"
     }
-
-	$.ajax({
-		url: "/api/user/home/edit",
-		type: "GET",
-		data: data
-	})
-	.done(function(data){
-		console.log(data)
-	})
+	// $.ajax({
+	// 	url: "/api/user/home/edit",
+	// 	type: "GET",
+	// 	data: data
+	// })
+	// .done(function(data){
+	// 	console.log(data)
+	// })
 
 	
 
