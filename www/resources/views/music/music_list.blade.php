@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="/assets/css/material.min.css">
 <!-- ↑のcssがfontサイズに影響 -->
 <link rel="stylesheet" href="/assets/css/music_list.css">
+<style>
+	
+</style>
 @endsection
 
 @section('content')
@@ -39,13 +42,36 @@
 		el: "#app",
 		data: {
 			music: [
-				@foreach ($album_ids as $key => $album_id)
 				{
-					url     : "{{ $album_ids[$key] }}",
-					imageUrl: "{{ $artwork_paths[$key] }}" ,
-					content : "{{ $album_titles[$key] }} - {{ $band_names[$key] }}"
+					url     : "1",
+					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
+					content : "content"
 				},
-				@endforeach
+				{
+					url     : "1",
+					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
+					content : "content"
+				},
+				{
+					url     : "1",
+					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
+					content : "content"
+				},
+				{
+					url     : "1",
+					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
+					content : "content"
+				},
+				{
+					url     : "1",
+					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
+					content : "content"
+				},
+				{
+					url     : "1",
+					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
+					content : "content"
+				},
 			]
 		}
 	})

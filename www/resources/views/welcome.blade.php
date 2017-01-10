@@ -1,28 +1,15 @@
 @extends('layouts.app')
 
 @section('title')
-TOP | albos
+トップ | albos
 @endsection
 
 @section('content')
-<h1>hello</h1>
-<script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
-<script>
+<main class="mdl-layout__content">
+	<div class="page-content" id="app">
 
-(function($){
+		<h1>hello top page</h1>	
 
-	$.ajax({
-		url: "/api/user/home/history",
-		type: "GET",
-	})
-	.done(function(data){
-		console.log(data)
-	})
-
-})(jQuery)
-
-</script>
+	</div>
+</main>
 @endsection

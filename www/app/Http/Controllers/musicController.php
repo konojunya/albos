@@ -13,6 +13,7 @@ class musicController extends Controller
 {
 	public function all()
 	{
+		/*
 		//アルバムテーブルからアルバム情報取得
 		$albums = album::get();
 		$album_ids     = array();
@@ -41,12 +42,14 @@ class musicController extends Controller
 		}
 		
 
-		return view('music.music_list')->with([
-	       	'album_ids'     => $album_ids,
-	       	'artwork_paths' => $artwork_paths,
-	       	'album_titles'  => $album_titles,
-	       	'band_names'    => $band_names
-	    ]);
+		// return view('music.music_list')->with([
+	 //       	'album_ids'     => $album_ids,
+	 //       	'artwork_paths' => $artwork_paths,
+	 //       	'album_titles'  => $album_titles,
+	 //       	'band_names'    => $band_names
+	 //    ]);
+		*/
+		return view("music.music_list");
 	}
 
 	public function select($album_id)
