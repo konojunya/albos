@@ -148,14 +148,17 @@ class musicController extends Controller
 	public function apiSelect(Request $request)
 	{
 		$id = null;
+		// ユーザーがログインしているかチェック
 		if (!Auth::check()) {
+			// ログインしていなければfalseを返す
 			return array(
 				"login" => false
 			);
 		}
+		// ユーザーIDを取得
 		$id = $request->user()->id;
 
-        
+		// アルバムIDを取得
 		$album_id = $request->input('album_id');
 
 		//アルバムテーブルからアルバム情報取得
@@ -195,6 +198,7 @@ class musicController extends Controller
 			$i++;
 		}
 
+		$musics_json = array();
 
 		foreach ($music_ids as $key => $music_id) {
 			$music = array(
