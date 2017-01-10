@@ -15,13 +15,13 @@ TOP | albos
 (function($){
 
 	// これであってる？？
-	var data = {
-      	user_id: "kinokoruumu",
-        user_name: "西川和希",
-        credit_card_number: "1234-5678-9012-3456",
-        email: "kinokoruumu416@yahoo.co.jp",
-        password: "111111"
-    }
+	// var data = {
+ //      	user_id: "kinokoruumu",
+ //        user_name: "西川和希",
+ //        credit_card_number: "1234-5678-9012-3456",
+ //        email: "kinokoruumu416@yahoo.co.jp",
+ //        password: "111111"
+ //    }
 	// $.ajax({
 	// 	url: "/api/user/home/edit",
 	// 	type: "GET",

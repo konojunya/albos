@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
 use App\album;
 use App\band;
 use App\music;
+use App\sales_description;
 use App\Http\Requests;
 
 class musicController extends Controller
@@ -146,6 +147,15 @@ class musicController extends Controller
 
 	public function apiSelect(Request $request)
 	{
+		$id = null;
+		if (!Auth::check()) {
+			return array(
+				"login" => false
+			);
+		}
+		$id = $request->user()->id;
+
+        
 		$album_id = $request->input('album_id');
 
 		//アルバムテーブルからアルバム情報取得
@@ -177,6 +187,11 @@ class musicController extends Controller
 			$prices[$i]           = $music->price;
 			$music_data_paths[$i] = $music->music_data_path;
 			$music_times[$i]      = $music->music_time;
+			$isBuy[$i]            = false;
+			if (sales_description::where('user_id', $id)->where('music_id', $music->music_id)->count()) {
+				$isBuy[$i]        = true;
+			}
+			// echo $music->music_id." - ".$isBuy[$i].",";
 			$i++;
 		}
 
@@ -187,7 +202,8 @@ class musicController extends Controller
 				'music_title'     => $music_titles[$key],
 				'price'           => $prices[$key],
 				'music_data_path' => $music_data_paths[$key],
-				'music_time'      => $music_times[$key]
+				'music_time'      => $music_times[$key],
+				'isBuy'           => $isBuy[$key]
 			);
 			$musics_json[] = $music;
 		}
@@ -204,10 +220,5 @@ class musicController extends Controller
 	    return array(
 	    	"album" => $album_json
 	    );
-	}
-
-	public function apiBand($band_id)
-	{
-		//バンドごとにアルバム情報を取得
 	}
 }
