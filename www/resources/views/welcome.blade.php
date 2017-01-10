@@ -31,6 +31,17 @@ TOP | albos
 	// 	console.log(data)
 	// })
 
+	$.ajax({
+		url: "/api/music/detail",
+		type: "GET",
+		data: {
+			album_id: "0000000001"
+		}
+	})
+	.done(function(data){
+		console.log(data)
+	})
+
 	
 
 	// $.ajax({

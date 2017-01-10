@@ -144,8 +144,10 @@ class musicController extends Controller
 	    );
 	}
 
-	public function apiSelect($album_id)
+	public function apiSelect(Request $request)
 	{
+		$album_id = $request->input('album_id');
+
 		//アルバムテーブルからアルバム情報取得
 		$albums = album::where('album_id', $album_id);
 
@@ -199,9 +201,9 @@ class musicController extends Controller
 			'musics'       => $musics_json
 		);
 
-	    // return array(
-	    // 	"album" => $album_json
-	    // );
+	    return array(
+	    	"album" => $album_json
+	    );
 	}
 
 	public function apiBand($band_id)
