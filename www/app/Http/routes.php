@@ -16,25 +16,17 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/music', 'musicController@all');
-Route::get('/music/{album_id}', 'musicController@select');
-
-Route::get('/music/{music_id}/buy', 'BuyController@buy');
-
-
-Route::get('/user/{user_id}/home', 'HomeController@index');
+Route::get('/music/{album_id}', 'musicController@select')->where('music_id', '[0-9]+');
+Route::get('/music/{music_id}/buy', 'BuyController@buy')->where('music_id', '[0-9]+');
 
 
-// Route::get('/user/{user_id}/edit', function () {
-//     return view('');
-// });
-// Route::get('/user/{user_id}/buy_history', function () {
-//     return view('');
-// });
+Route::get('/user/home', 'HomeController@index');
+
 
 // API
 Route::get('/api/music','musicController@apiAll');
 Route::get('/api/music/detail','musicController@apiSelect');
-Route::get('/api/band/{band_id}/music','musicController@apiBand');
+// Route::get('/api/band/{band_id}/music','musicController@apiBand');
 
 Route::get('/api/user/home','HomeController@apiIndex');
 Route::get('/api/user/home/edit','HomeController@apiEdit');

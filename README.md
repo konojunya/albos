@@ -17,7 +17,7 @@
 | GET        |  /                             |　　ＴＯＰページ　　　　　　　　　　　　　|
 | GET        |  /music                        |　　曲一覧　　　　　　　　　　　　　　　　|
 | GET        |  /music/:album_id              |　　曲詳細ページ　　　　　　　          |
-| GET        |  /:band_id/album_id            |　　バンドごとのアップロード済みの曲一覧　|
+
 <br>
 <br>
 
@@ -26,9 +26,9 @@
 | Method     |  URL                           |   Detail                |
 |:-----------|:-------------------------------|:------------------------|
 | GET        |  /music/:music_id/buy          |　　購入　　　　　　　　　　　|
-| GET        |  /user/:user_id/home           |　　ユーザマイページ　　　　　|
-| GET        |  /user/:user_id/edit           |　　ユーザマイページ編集　　　|
-| GET        |  /user/:user_id/buy-history    |　　購入済みの曲一覧　　　　　|
+| GET        |  /user/home                    |　　ユーザマイページ　　　　　|
+| GET        |  /user/home/edit               |　　ユーザマイページ編集　　　|
+| GET        |  /user/home/history            |　　購入済みの曲一覧　　　　　|
 <br>
 <br>
 
@@ -42,7 +42,6 @@
 |:-----------|:-------------------------------|:----------------------------------|
 | GET        |  /api/music                    |　　曲一覧　　　　　　　　　　　　　　　|
 | GET        |  /api/music/detail             |　　曲詳細ページ　　　　　　　　　　　　|
-| GET        |  /api/band/:band_id/music      |　　バンドごとのアップロード済みの曲一覧|
 
 `/api/music`
 
@@ -52,9 +51,9 @@ res: {
   albums: [
     {
     	album_id: "0000000001",
-    	artwork_path: "/assets/images/0000000001.jpg",
-    	album_title: "Title",
-    	band_name: "かずきくらっしゃ〜〜ず"
+    	artwork_path: "http://cdfront.tower.jp/~/media/Images/Article/News/2013/Japanese/R/RADWIMPS/RADWIMPS_201311A.jpg",
+    	album_title: "×と◯と罪と",
+    	band_name: "RADWIMPS"
    	}
    	...
   ]
@@ -64,44 +63,29 @@ res: {
 `/api/music/detail`
 
 ```
-req: album_id
+req: {
+  album_id:0000000001
+  }
 res: {
 	album: [
     {
-      album_title: "Title",
+      album_title: "×と◯と罪と",
       artwork_path: "music_data/0000000001.mp3",
       property: "アルバム",
       release: "2013-01-01",
-      band_name: "かずきくらっしゃ〜〜ず",
+      band_name: "RADWIMPS",
       musics: [
         {
           music_id: "0000000001",
-          music_title: "Title",
+          music_title: "いえない",
           price: 250,
           music_data_paths: "music_data/0000000001.mp3",
-          music_time: "00:05:13"
+          music_time: "00:05:13",
+          isBuy: true
         }
       ]
       ...
     }
-  ]
-}
-```
-
-↓バンドページ無いからいらないかも
-`/api/band/:band_id/music`
-
-```
-req: band_id
-res: {
-	albums: [
-    {
-      album_id: "0000000001",
-      artwork_path: "/assets/images/0000000001.jpg",
-      album_title: "Title",
-      band_name: "かずきくらっしゃ〜〜ず"
-    }
-    ...
   ]
 }
 ```
@@ -113,9 +97,9 @@ res: {
 
 | Method     |  URL                           |   Detail                |
 |:-----------|:-------------------------------|:------------------------|
-| GET        |  /api/user/home              |　　ユーザマイページ　　　　　|
-| POST       |  /api/user/home/edit         |　　ユーザマイページ編集　　　|
-| GET        |  /api/user/home/history      |　　購入済みの曲一覧　　　　　|
+| GET        |  /api/user/home                |　　ユーザマイページ　　　　|
+| POST       |  /api/user/home/edit           |　　ユーザマイページ編集　　|
+| GET        |  /api/user/home/history        |　　購入済みの曲一覧　　　　|
 
 `/api/user/home`
 
@@ -136,7 +120,14 @@ res: {
 `/api/user/home/edit`
 
 ```
-req: updates
+req: {
+      user_id: "hogeruumu",
+      user_name: "きのーご",
+      password: "*******",
+      credit_card_number: "1234-5678-9012-3456",
+      email: "hoge@example.com",
+      password: "111111"
+    }
 res: {
 	user: [
     {
@@ -144,7 +135,8 @@ res: {
       user_name: "きのーご",
       password: "*******",
       credit_card_number: "1234-5678-9012-3456",
-      email: "hoge@example.com"
+      email: "hoge@example.com",
+      password: "111111"
     }
   ]
 }

@@ -53,25 +53,51 @@ class HomeController extends Controller
 
     public function apiEdit(Request $request)
     {
+        //登録情報を更新するユーザーの特定
+        $id = $request->user()->id;
+        
         //更新情報の受け取り
-        $user_id            = $request->user()->user_id;
-        $user_name          = $request->user()->user_name;
-        $credit_card_number = $request->user()->credit_card_number;
-        $email              = $request->user()->email;
+        $user_id = $request->input('user_id');
+        $user_name = $request->input('user_name');
+        $credit_card_number = $request->input('credit_card_number');
+        $email = $request->input('email');
+        $password = $request->input('password');
 
-        //データベースへ格納
-        User::insert([
-            'user_id'            => $user_id,
-            'user_name'          => $user_name,
-            'credit_card_number' => $credit_card_number,
-            'email'              => $email  
-        ]);
+        if ($user_id == null) {
+            return;
+        }
+        if ($user_name == null) {
+            return;
+        }
+        if ($credit_card_number == null) {
+            return;
+        }
+        if ($email == null) {
+            return;
+        }
+        if ($password == null) {
+            return;
+        }
+
+        // パスワードの暗号化
+        $password = bcrypt($password);
+
+        // 登録情報の更新
+        User::where('id', $id)
+            ->update([
+                'user_id' => $user_id,
+                'user_name' => $user_name,
+                'credit_card_number' => $credit_card_number,
+                'email' => $email,
+                'password' => $password
+                ]);
 
         $user_json[] = array(
             'user_id'            => $user_id,
             'user_name'          => $user_name,
             'credit_card_number' => $credit_card_number,
-            'email'              => $email
+            'email'              => $email,
+            'password' => $password
         );
 
         return array(

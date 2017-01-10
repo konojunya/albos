@@ -57,6 +57,11 @@ class musicController extends Controller
 		//アルバムテーブルからアルバム情報取得
 		$albums = album::where('album_id', $album_id);
 
+		//正しいアルバムIDかチェック
+		if ($albums->value('album_title') == NULL) {
+			return view('errors.404');
+		}
+
 		//albumsの情報を変数に格納
 		$album_title  = $albums->value('album_title');
 		$artwork_path = $albums->value('artwork_path');
@@ -165,6 +170,7 @@ class musicController extends Controller
 		$prices           = array();
 		$music_data_paths = array();
 		$music_times      = array();
+		$isBuy            = array();
 		$i = 0;
 		foreach ($musics as $music) {
 			$music_ids[$i]        = $music->music_id;
@@ -196,9 +202,9 @@ class musicController extends Controller
 			'musics'       => $musics_json
 		);
 
-	    return array(
-	    	"album" => $album_json
-	    );
+	    // return array(
+	    // 	"album" => $album_json
+	    // );
 	}
 
 	public function apiBand($band_id)
