@@ -16,8 +16,8 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/music', 'musicController@all');
-Route::get('/music/{album_id}', 'musicController@select');
-Route::get('/music/{music_id}/buy', 'BuyController@buy');
+Route::get('/music/{album_id}', 'musicController@select')->where('music_id', '[0-9]+');
+Route::get('/music/{music_id}/buy', 'BuyController@buy')->where('music_id', '[0-9]+');
 
 
 Route::get('/user/home', 'HomeController@index');

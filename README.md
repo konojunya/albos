@@ -52,9 +52,9 @@ res: {
   albums: [
     {
     	album_id: "0000000001",
-    	artwork_path: "/assets/images/0000000001.jpg",
-    	album_title: "Title",
-    	band_name: "かずきくらっしゃ〜〜ず"
+    	artwork_path: "http://cdfront.tower.jp/~/media/Images/Article/News/2013/Japanese/R/RADWIMPS/RADWIMPS_201311A.jpg",
+    	album_title: "×と◯と罪と",
+    	band_name: "RADWIMPS"
    	}
    	...
   ]
@@ -68,18 +68,19 @@ req: album_id
 res: {
 	album: [
     {
-      album_title: "Title",
+      album_title: "×と◯と罪と",
       artwork_path: "music_data/0000000001.mp3",
       property: "アルバム",
       release: "2013-01-01",
-      band_name: "かずきくらっしゃ〜〜ず",
+      band_name: "RADWIMPS",
       musics: [
         {
           music_id: "0000000001",
-          music_title: "Title",
+          music_title: "いえない",
           price: 250,
           music_data_paths: "music_data/0000000001.mp3",
-          music_time: "00:05:13"
+          music_time: "00:05:13",
+          isBuy: true
         }
       ]
       ...
@@ -97,9 +98,9 @@ res: {
 	albums: [
     {
       album_id: "0000000001",
-      artwork_path: "/assets/images/0000000001.jpg",
-      album_title: "Title",
-      band_name: "かずきくらっしゃ〜〜ず"
+      artwork_path: "http://cdfront.tower.jp/~/media/Images/Article/News/2013/Japanese/R/RADWIMPS/RADWIMPS_201311A.jpg",
+      album_title: "×と◯と罪と",
+      band_name: "RADWIMPS"
     }
     ...
   ]

@@ -54,6 +54,11 @@ class musicController extends Controller
 		//アルバムテーブルからアルバム情報取得
 		$albums = album::where('album_id', $album_id);
 
+		//正しいアルバムIDかチェック
+		if ($albums->value('album_title') == NULL) {
+			return view('errors.404');
+		}
+
 		//albumsの情報を変数に格納
 		$album_title  = $albums->value('album_title');
 		$artwork_path = $albums->value('artwork_path');
