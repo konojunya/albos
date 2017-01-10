@@ -17,7 +17,7 @@
 | GET        |  /                             |　　ＴＯＰページ　　　　　　　　　　　　　|
 | GET        |  /music                        |　　曲一覧　　　　　　　　　　　　　　　　|
 | GET        |  /music/:album_id              |　　曲詳細ページ　　　　　　　          |
-| GET        |  /band/:band_id/album_id       |　　バンドごとのアップロード済みの曲一覧　|
+
 <br>
 <br>
 
@@ -42,7 +42,6 @@
 |:-----------|:-------------------------------|:----------------------------------|
 | GET        |  /api/music                    |　　曲一覧　　　　　　　　　　　　　　　|
 | GET        |  /api/music/detail             |　　曲詳細ページ　　　　　　　　　　　　|
-| GET        |  /api/band/:band_id/music      |　　バンドごとのアップロード済みの曲一覧|
 
 `/api/music`
 
@@ -64,7 +63,9 @@ res: {
 `/api/music/detail`
 
 ```
-req: album_id
+req: {
+  album_id:0000000001
+  }
 res: {
 	album: [
     {
@@ -85,24 +86,6 @@ res: {
       ]
       ...
     }
-  ]
-}
-```
-
-↓バンドページ無いからいらないかも
-`/api/band/:band_id/music`
-
-```
-req: band_id
-res: {
-	albums: [
-    {
-      album_id: "0000000001",
-      artwork_path: "http://cdfront.tower.jp/~/media/Images/Article/News/2013/Japanese/R/RADWIMPS/RADWIMPS_201311A.jpg",
-      album_title: "×と◯と罪と",
-      band_name: "RADWIMPS"
-    }
-    ...
   ]
 }
 ```
@@ -137,7 +120,14 @@ res: {
 `/api/user/home/edit`
 
 ```
-req: updates
+req: {
+      user_id: "hogeruumu",
+      user_name: "きのーご",
+      password: "*******",
+      credit_card_number: "1234-5678-9012-3456",
+      email: "hoge@example.com",
+      password: "111111"
+    }
 res: {
 	user: [
     {

@@ -167,6 +167,7 @@ class musicController extends Controller
 		$prices           = array();
 		$music_data_paths = array();
 		$music_times      = array();
+		$isBuy            = array();
 		$i = 0;
 		foreach ($musics as $music) {
 			$music_ids[$i]        = $music->music_id;
@@ -198,9 +199,9 @@ class musicController extends Controller
 			'musics'       => $musics_json
 		);
 
-	    return array(
-	    	"album" => $album_json
-	    );
+	    // return array(
+	    // 	"album" => $album_json
+	    // );
 	}
 
 	public function apiBand($band_id)
