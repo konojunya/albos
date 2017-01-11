@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
 use App\album;
 use App\band;
 use App\music;
+use App\sales_description;
 use App\Http\Requests;
 
 class musicController extends Controller
@@ -147,8 +148,22 @@ class musicController extends Controller
 	    );
 	}
 
-	public function apiSelect($album_id)
+	public function apiSelect(Request $request)
 	{
+		$id = null;
+		// ユーザーがログインしているかチェック
+		if (!Auth::check()) {
+			// ログインしていなければfalseを返す
+			return array(
+				"login" => false
+			);
+		}
+		// ユーザーIDを取得
+		$id = $request->user()->id;
+
+		// アルバムIDを取得
+		$album_id = $request->input('album_id');
+
 		//アルバムテーブルからアルバム情報取得
 		$albums = album::where('album_id', $album_id);
 
@@ -178,9 +193,15 @@ class musicController extends Controller
 			$prices[$i]           = $music->price;
 			$music_data_paths[$i] = $music->music_data_path;
 			$music_times[$i]      = $music->music_time;
+			$isBuy[$i]            = false;
+			if (sales_description::where('user_id', $id)->where('music_id', $music->music_id)->count()) {
+				$isBuy[$i]        = true;
+			}
+			// echo $music->music_id." - ".$isBuy[$i].",";
 			$i++;
 		}
 
+		$musics_json = array();
 
 		foreach ($music_ids as $key => $music_id) {
 			$music = array(
@@ -188,7 +209,8 @@ class musicController extends Controller
 				'music_title'     => $music_titles[$key],
 				'price'           => $prices[$key],
 				'music_data_path' => $music_data_paths[$key],
-				'music_time'      => $music_times[$key]
+				'music_time'      => $music_times[$key],
+				'isBuy'           => $isBuy[$key]
 			);
 			$musics_json[] = $music;
 		}
@@ -202,13 +224,8 @@ class musicController extends Controller
 			'musics'       => $musics_json
 		);
 
-	    // return array(
-	    // 	"album" => $album_json
-	    // );
-	}
-
-	public function apiBand($band_id)
-	{
-		//バンドごとにアルバム情報を取得
+	    return array(
+	    	"album" => $album_json
+	    );
 	}
 }

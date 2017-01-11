@@ -65,6 +65,7 @@ res: {
 req: {
   album_id:0000000001
   }
+ログイン時
 res: {
 	album: [
     {
@@ -87,7 +88,11 @@ res: {
     }
   ]
 }
-```
+
+未ログイン時
+res: {
+  login: false
+}
 
 <br>
 <br>
