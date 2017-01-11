@@ -7,7 +7,6 @@
 @section('css')
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="/assets/css/material.min.css">
-<!-- ↑のcssがfontサイズに影響 -->
 <link rel="stylesheet" href="/assets/css/music_list.css">
 <style>
 	
@@ -18,16 +17,53 @@
 <main class="mdl-layout__content">
 	<div class="page-content" id="app">
 
-		<!-- <a href="/music/@{{item.url}}"> -->
-			<a href="/music/@{{item.url}}" class="mdl-card mdl-shadow--2dp music-card" v-for="item in music">
-			  	<div class="mdl-card__title mdl-card--expand image">
+		<div class="truck-wrpper topic">
+			<h2>注目トラック</h2>
+			<div>
+				<a href="/music/@{{item.url}}" class="music-card" v-for="item in music">
+			  	<div class="image">
 			  		<img src="@{{item.imageUrl}}" alt="">
 			  	</div>
-			  	<div class="mdl-card__supporting-text text">
-			    	@{{item.content}}
-			  	</div>
+			  	<p class="album-title">
+			    	@{{item.album_title}}
+			  	</p>
+			  	<p class="band-name">
+			  		@{{item.band_name}}
+			  	</p>
+				</a>
+			</div>
+		</div>
+
+		<!-- <div>
+			<h2>最新リリース</h2>
+			<a href="/music/@{{item.url}}" class="music-card" v-for="item in music">
+		  	<div class="image">
+		  		<img src="@{{item.imageUrl}}" alt="">
+		  	</div>
+		  	<p class="album-title">
+		    	@{{item.album_title}}
+		  	</p>
+		  	<p class="band-name">
+		  		@{{item.band_name}}
+		  	</p>
 			</a>
-		<!-- </a> -->
+		</div>
+
+		<div>
+			<h2>コンピレーション</h2>
+			<a href="/music/@{{item.url}}" class="music-card" v-for="item in music">
+		  	<div class="image">
+		  		<img src="@{{item.imageUrl}}" alt="">
+		  	</div>
+		  	<p class="album-title">
+		    	@{{item.album_title}}
+		  	</p>
+		  	<p class="band-name">
+		  		@{{item.band_name}}
+		  	</p>
+			</a>
+		</div> -->
+
 	</div>
 </main>
 @endsection
@@ -45,32 +81,62 @@
 				{
 					url     : "1",
 					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
-					content : "content"
+					album_title : "不明なアルバム不明なアルバム不明なアルバム不明なアルバム",
+					band_name: "Perfume + JunJun FEVER jr. & oppai"
 				},
 				{
 					url     : "1",
 					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
-					content : "content"
+					album_title : "不明なアルバム",
+					band_name: "Perfume"
 				},
 				{
 					url     : "1",
 					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
-					content : "content"
+					album_title : "不明なアルバム",
+					band_name: "Perfume"
 				},
 				{
 					url     : "1",
 					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
-					content : "content"
+					album_title : "不明なアルバム",
+					band_name: "Perfume"
 				},
 				{
 					url     : "1",
 					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
-					content : "content"
+					album_title : "不明なアルバム",
+					band_name: "Perfume"
 				},
 				{
 					url     : "1",
 					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
-					content : "content"
+					album_title : "不明なアルバム",
+					band_name: "Perfume"
+				},
+				{
+					url     : "1",
+					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
+					album_title : "不明なアルバム",
+					band_name: "Perfume"
+				},
+				{
+					url     : "1",
+					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
+					album_title : "不明なアルバム",
+					band_name: "Perfume"
+				},
+				{
+					url     : "1",
+					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
+					album_title : "不明なアルバム",
+					band_name: "Perfume"
+				},
+				{
+					url     : "1",
+					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
+					album_title : "不明なアルバム",
+					band_name: "Perfume"
 				},
 			]
 		}

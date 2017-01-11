@@ -25,7 +25,6 @@
 
 | Method     |  URL                           |   Detail                |
 |:-----------|:-------------------------------|:------------------------|
-| GET        |  /music/:music_id/buy          |　　購入　　　　　　　　　　　|
 | GET        |  /user/home                    |　　ユーザマイページ　　　　　|
 | GET        |  /user/home/edit               |　　ユーザマイページ編集　　　|
 | GET        |  /user/home/history            |　　購入済みの曲一覧　　　　　|

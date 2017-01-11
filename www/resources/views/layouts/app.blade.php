@@ -11,7 +11,7 @@
 </head>
 <body id="app-layout">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header">
+        <header class="mdl-layout__header" style="background-color: #1E2D6B;">
             <div class="mdl-layout__header-row">
                 <a class="mdl-layout-title" href="{{ url('/') }}" style="color: white;text-decoration: none;">albos</a>
                 <div class="mdl-layout-spacer"></div>
