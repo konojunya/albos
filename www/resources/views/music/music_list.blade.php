@@ -5,64 +5,69 @@
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="/assets/css/material.min.css">
 <link rel="stylesheet" href="/assets/css/music_list.css">
-<style>
-	
-</style>
 @endsection
 
 @section('content')
 <main class="mdl-layout__content">
 	<div class="page-content" id="app">
 
-		<div class="truck-wrpper topic">
+		<div class="truck-wrapper topic">
 			<h2>注目トラック</h2>
-			<div>
-				<a href="/music/@{{item.url}}" class="music-card" v-for="item in music">
-			  	<div class="image">
-			  		<img src="@{{item.imageUrl}}" alt="">
-			  	</div>
-			  	<p class="album-title">
-			    	@{{item.album_title}}
-			  	</p>
-			  	<p class="band-name">
-			  		@{{item.band_name}}
-			  	</p>
-				</a>
-			</div>
+			<ul class="truck-list">
+				<li v-for="item in music" class="truck-item">
+					<a href="/music/@{{item.url}}">
+				  	<div class="image">
+				  		<img src="@{{item.imageUrl}}" alt="">
+				  	</div>
+				  	<p class="album-title">
+				    	@{{item.album_title}}
+				  	</p>
+				  	<p class="band-name">
+				  		@{{item.band_name}}
+				  	</p>
+					</a>
+				</li>
+			</ul>
 		</div>
 
-		<!-- <div>
+		<div class="truck-wrapper topic">
 			<h2>最新リリース</h2>
-			<a href="/music/@{{item.url}}" class="music-card" v-for="item in music">
-		  	<div class="image">
-		  		<img src="@{{item.imageUrl}}" alt="">
-		  	</div>
-		  	<p class="album-title">
-		    	@{{item.album_title}}
-		  	</p>
-		  	<p class="band-name">
-		  		@{{item.band_name}}
-		  	</p>
-			</a>
+			<ul class="truck-list">
+				<li v-for="item in music" class="truck-item">
+					<a href="/music/@{{item.url}}">
+				  	<div class="image">
+				  		<img src="@{{item.imageUrl}}" alt="">
+				  	</div>
+				  	<p class="album-title">
+				    	@{{item.album_title}}
+				  	</p>
+				  	<p class="band-name">
+				  		@{{item.band_name}}
+				  	</p>
+					</a>
+				</li>
+			</ul>
 		</div>
 
-		<div>
+		<div class="truck-wrapper topic">
 			<h2>コンピレーション</h2>
-			<a href="/music/@{{item.url}}" class="music-card" v-for="item in music">
-		  	<div class="image">
-		  		<img src="@{{item.imageUrl}}" alt="">
-		  	</div>
-		  	<p class="album-title">
-		    	@{{item.album_title}}
-		  	</p>
-		  	<p class="band-name">
-		  		@{{item.band_name}}
-		  	</p>
-			</a>
-		</div> -->
+			<ul class="truck-list">
+				<li v-for="item in music" class="truck-item">
+					<a href="/music/@{{item.url}}">
+				  	<div class="image">
+				  		<img src="@{{item.imageUrl}}" alt="">
+				  	</div>
+				  	<p class="album-title">
+				    	@{{item.album_title}}
+				  	</p>
+				  	<p class="band-name">
+				  		@{{item.band_name}}
+				  	</p>
+					</a>
+				</li>
+			</ul>
+		</div>
 
 	</div>
 </main>
@@ -83,18 +88,6 @@
 					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
 					album_title : "不明なアルバム不明なアルバム不明なアルバム不明なアルバム",
 					band_name: "Perfume + JunJun FEVER jr. & oppai"
-				},
-				{
-					url     : "1",
-					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
-					album_title : "不明なアルバム",
-					band_name: "Perfume"
-				},
-				{
-					url     : "1",
-					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
-					album_title : "不明なアルバム",
-					band_name: "Perfume"
 				},
 				{
 					url     : "1",

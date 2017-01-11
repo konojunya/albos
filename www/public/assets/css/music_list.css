@@ -8,16 +8,32 @@ body,html{
 	box-sizing: border-box;
 }
 
-.truck-wrpper{
-	background-color: red;
+#app{
+	width: 100%!important;
 }
 
-.music-card{
+.truck-wrapper{
+	width: 100%;
+}
+.truck-wrapper h2{
+	margin: 20px;
+	font-size: 4rem;
+	font-weight: bold;
+}
+
+.truck-list{
+	display: flex;
+	justify-content: left;
+	flex-wrap: wrap;
+}
+
+.truck-item{
 	width: 130px;
-	margin: 15px;
+	margin: 20px;
+	list-style: none;
 }
 
-.music-card .album-title{
+.truck-item .album-title{
 	width: 100%;
 	text-align: left;
 	color: #2F2F2F;
@@ -27,7 +43,7 @@ body,html{
 	white-space: nowrap;
 	overflow: hidden;
 }
-.music-card .band-name{
+.truck-item .band-name{
 	text-align: left;
 	margin: 0;
 	color: #989898;
@@ -36,12 +52,12 @@ body,html{
 	overflow: hidden;
 }
 
-.music-card .image{
+.truck-item .image{
 	color: #fff;
 	width: 100%;
 	padding: 0;
 }
-.music-card .image img{
+.truck-item .image img{
 	display: block;
 	width: 100%;
 }
