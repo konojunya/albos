@@ -1,47 +1,19 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('layouts.app')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('title')
+マイページ | albos
+@endsection
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+@section('css')
+<link rel="stylesheet" href="/assets/css/mypage.css">
+@endsection
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+@section('content')
+<main class="mdl-layout__content">
+  <div class="page-content" id="app">
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+    aa
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">
-                    hoge
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+  </div>
+</main>
+@endsection
