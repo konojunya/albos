@@ -19,15 +19,3 @@
 // 		]
 // 	}
 // })
-
-/*
-*		masonry
-*/
-var $grid = $("#app").masonry({
-	itemSelector: ".music-card",
-	fitWidth: true
-})
-
-$grid.imagesLoaded().progress(function(){
-	$grid.masonry("layout")
-})

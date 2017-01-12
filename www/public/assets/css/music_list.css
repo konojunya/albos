@@ -9,25 +9,55 @@ body,html{
 }
 
 #app{
-	text-align: center;
-	margin: 0 auto;
+	width: 100%!important;
 }
 
-.music-card{
-	width: 200px;
-	margin: 15px;
+.truck-wrapper{
+	width: 100%;
+}
+.truck-wrapper h2{
+	margin: 20px;
+	font-size: 4rem;
+	font-weight: bold;
 }
 
-.music-card .text{
+.truck-list{
+	display: flex;
+	justify-content: left;
+	flex-wrap: wrap;
+}
+
+.truck-item{
+	width: 130px;
+	margin: 20px;
+	list-style: none;
+}
+
+.truck-item .album-title{
+	width: 100%;
 	text-align: left;
+	color: #2F2F2F;
+	margin: 0;
+	font-size: 0.9rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.truck-item .band-name{
+	text-align: left;
+	margin: 0;
+	color: #989898;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
-.music-card .image{
+.truck-item .image{
 	color: #fff;
 	width: 100%;
 	padding: 0;
 }
-.music-card .image img{
+.truck-item .image img{
 	display: block;
 	width: 100%;
 }
