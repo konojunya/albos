@@ -42,17 +42,14 @@ class HomeController extends Controller
 
         $history = $this->apiHistory($request);
 
-        $user_json[] = array(
+        $user_json = array(
             'user_id'            => $user_id,
             'user_name'          => $user_name,
-            'credit_card_number' => $credit_card_number,
             'email'              => $email,
             'history'            => $history
         );
 
-        return array(
-            "user" => $user_json
-        );
+        return $user_json;
     }
 
     public function apiEdit(Request $request)
