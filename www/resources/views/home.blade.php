@@ -1,17 +1,19 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+@section('title')
+マイページ | albos
+@endsection
 
-                <div class="panel-body">
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@section('css')
+<link rel="stylesheet" href="/assets/css/mypage.css">
+@endsection
+
+@section('content')
+<main class="mdl-layout__content">
+  <div class="page-content" id="app">
+
+    aa
+
+  </div>
+</main>
 @endsection
