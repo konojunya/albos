@@ -13,9 +13,9 @@ TOP | albos
 
 
 <div class="main-visual">
-	<!-- <div class="row-top"></div> -->
-	<!-- <div class="row-middle"></div> -->
-	<!-- <div class="row-bottom"></div> -->
+	<div class="row-top"></div>
+	<div class="row-middle"></div>
+	<div class="row-bottom"></div>
 </div>
 
 <div class="album-container">

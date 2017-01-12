@@ -160,8 +160,6 @@ class HomeController extends Controller
             $this->history_json[] = $history;
         }
 
-        return array(
-            'history' => $this->history_json
-        );
+        return $this->history_json;
     }
 }
