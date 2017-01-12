@@ -152,12 +152,12 @@ class musicController extends Controller
 	{
 		$id = null;
 		// ユーザーがログインしているかチェック
-		if (!Auth::check()) {
-			// ログインしていなければfalseを返す
-			return array(
-				"login" => false
-			);
-		}
+		// if (!Auth::check()) {
+		// 	// ログインしていなければfalseを返す
+		// 	return array(
+		// 		"login" => false
+		// 	);
+		// }
 		// ユーザーIDを取得
 		$id = $request->user()->id;
 
@@ -212,6 +212,7 @@ class musicController extends Controller
 				'music_time'      => $music_times[$key],
 				'isBuy'           => $isBuy[$key]
 			);
+			
 			$musics_json[] = $music;
 		}
 
