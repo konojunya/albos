@@ -76,8 +76,6 @@
 @section('javascript')
 <script src="/assets/js/material.min.js"></script>
 <script src="/assets/js/vue.min.js"></script>
-<script src="/assets/js/masonry.pkgd.min.js"></script>
-<script src="/assets/js/imagesloaded.pkgd.min.js"></script>
 <script>
 	var vm = new Vue({
 		el: "#app",
