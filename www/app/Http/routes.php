@@ -21,6 +21,9 @@ Route::get('/music/{music_id}/buy', 'BuyController@buy')->where('music_id', '[0-
 
 
 Route::get('/user/home', 'HomeController@index');
+Route::get('/user/home/history', function () {
+	return view('user.history');
+});
 
 
 // API

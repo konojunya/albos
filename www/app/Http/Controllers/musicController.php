@@ -14,7 +14,6 @@ class musicController extends Controller
 {
 	public function all()
 	{
-		/*
 		//アルバムテーブルからアルバム情報取得
 		$albums = album::get();
 		$album_ids     = array();
@@ -43,14 +42,12 @@ class musicController extends Controller
 		}
 		
 
-		// return view('music.music_list')->with([
-	 //       	'album_ids'     => $album_ids,
-	 //       	'artwork_paths' => $artwork_paths,
-	 //       	'album_titles'  => $album_titles,
-	 //       	'band_names'    => $band_names
-	 //    ]);
-		*/
-		return view("music.music_list");
+		return view('music.music_list')->with([
+	       	'album_ids'     => $album_ids,
+	       	'artwork_paths' => $artwork_paths,
+	       	'album_titles'  => $album_titles,
+	       	'band_names'    => $band_names
+	    ]);
 	}
 
 	public function select($album_id)
@@ -152,12 +149,12 @@ class musicController extends Controller
 	{
 		$id = null;
 		// ユーザーがログインしているかチェック
-		// if (!Auth::check()) {
-		// 	// ログインしていなければfalseを返す
-		// 	return array(
-		// 		"login" => false
-		// 	);
-		// }
+		if (!Auth::check()) {
+			// ログインしていなければfalseを返す
+			return array(
+				"login" => false
+			);
+		}
 		// ユーザーIDを取得
 		$id = $request->user()->id;
 

@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    protected $history_json = [];
     /**
      * Create a new controller instance.
      *
@@ -39,11 +40,14 @@ class HomeController extends Controller
         $credit_card_number = $request->user()->credit_card_number;
         $email              = $request->user()->email;
 
+        $history = $this->apiHistory($request);
+
         $user_json[] = array(
             'user_id'            => $user_id,
             'user_name'          => $user_name,
             'credit_card_number' => $credit_card_number,
-            'email'              => $email
+            'email'              => $email,
+            'history'            => $history
         );
 
         return array(
@@ -105,7 +109,7 @@ class HomeController extends Controller
         );
     }
 
-    public function apiHistory(Request $request)
+    public function apiHistory($request)
     {
         //履歴を表示するユーザーを特定
         $id = $request->user()->id;
@@ -130,12 +134,9 @@ class HomeController extends Controller
 
 
         foreach ($album_ids as $album_id) {
-            $albums = album::where('album_id', $album_id)->get();
-
-            foreach ($albums as $album) {
-                $album_titles[] = $album->album_title;
-                $band_id = $album->band_id;
-            }
+            $album = album::where('album_id', $album_id)->first();
+            $album_titles[] = $album->album_title;
+            $band_id = $album->band_id;
             
             $band_names[] = band::where('band_id', $band_id)->value('band_name');
         }
@@ -148,11 +149,11 @@ class HomeController extends Controller
                 'price'         => $prices[$key],
                 'purchase_date' => $purchase_dates[$key]
             );
-            $history_json[] = $history;
+            $this->history_json[] = $history;
         }
 
         return array(
-            'history' => $history_json
+            'history' => $this->history_json
         );
     }
 }
