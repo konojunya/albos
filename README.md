@@ -61,6 +61,7 @@ res: {
 
 `/api/music/detail`
 
+
 ```
 req: {
   album_id:0000000001
@@ -88,11 +89,14 @@ res: {
     }
   ]
 }
+```
 
+```
 未ログイン時
 res: {
   login: false
 }
+```
 
 <br>
 <br>
@@ -106,6 +110,7 @@ res: {
 | GET        |  /api/user/home/history        |　　購入済みの曲一覧　　　　|
 
 `/api/user/home`
+
 
 ```
 req: no
@@ -122,6 +127,7 @@ res: {
 ```
 
 `/api/user/home/edit`
+
 
 ```
 req: {
