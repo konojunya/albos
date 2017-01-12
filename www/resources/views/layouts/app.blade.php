@@ -34,8 +34,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{ url('/user/home') }}"><i class="fa fa-btn fa-sign-out"></i>マイページ</a></li>
-                                    <li><a href="{{ url('/user/home/history') }}"><i class="fa fa-btn fa-sign-out"></i>購入履歴</a></li>
+                                    <li><a href="{{ url('/mypage') }}"><i class="fa fa-btn fa-sign-out"></i>マイページ</a></li>
                                     <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>ログアウト</a></li>
                                 </ul>
                             </li>
