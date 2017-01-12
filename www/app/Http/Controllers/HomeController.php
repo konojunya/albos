@@ -116,11 +116,18 @@ class HomeController extends Controller
 
         //購入履歴
         $purchase_details = sales_description::where('user_id', $id)->get();
+
+        $music_ids = array();
+        $purchase_dates = array();
         foreach ($purchase_details as $purchase_detail) {
             $music_ids[] = $purchase_detail->music_id;
             $purchase_dates[] = $purchase_detail->purchase_date;
         }
 
+        $musics = array();
+        $music_titles = array();
+        $album_ids = array();
+        $prices = array();
         foreach ($music_ids as $music_id) {
             $musics = music::where('music_id', $music_id)->get();
 
@@ -132,7 +139,8 @@ class HomeController extends Controller
             
         }
 
-
+        $album_titles = array();
+        $band_names = array();
         foreach ($album_ids as $album_id) {
             $album = album::where('album_id', $album_id)->first();
             $album_titles[] = $album->album_title;
