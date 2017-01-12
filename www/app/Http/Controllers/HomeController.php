@@ -30,7 +30,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('user.mypage');
     }
 
     public function apiIndex(Request $request)
