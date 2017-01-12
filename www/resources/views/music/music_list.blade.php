@@ -82,49 +82,49 @@
 		data: {
 			music: [
 				{
-					url     : "1",
+					url     : "0000000001",
 					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
 					album_title : "不明なアルバム不明なアルバム不明なアルバム不明なアルバム",
 					band_name: "Perfume + JunJun FEVER jr. & oppai"
 				},
 				{
-					url     : "1",
+					url     : "0000000001",
 					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
 					album_title : "不明なアルバム",
 					band_name: "Perfume"
 				},
 				{
-					url     : "1",
+					url     : "0000000001",
 					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
 					album_title : "不明なアルバム",
 					band_name: "Perfume"
 				},
 				{
-					url     : "1",
+					url     : "0000000001",
 					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
 					album_title : "不明なアルバム",
 					band_name: "Perfume"
 				},
 				{
-					url     : "1",
+					url     : "0000000001",
 					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
 					album_title : "不明なアルバム",
 					band_name: "Perfume"
 				},
 				{
-					url     : "1",
+					url     : "0000000001",
 					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
 					album_title : "不明なアルバム",
 					band_name: "Perfume"
 				},
 				{
-					url     : "1",
+					url     : "0000000001",
 					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
 					album_title : "不明なアルバム",
 					band_name: "Perfume"
 				},
 				{
-					url     : "1",
+					url     : "0000000001",
 					imageUrl: "http://hirox-area.c.blog.so-net.ne.jp/_images/blog/_b1a/Hirox-area/Perfume20SPICE20E9809AE5B8B8E79BA4SPE38080Fix.jpg",
 					album_title : "不明なアルバム",
 					band_name: "Perfume"

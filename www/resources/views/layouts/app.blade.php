@@ -16,21 +16,25 @@
                 <a class="mdl-layout-title" href="{{ url('/') }}" style="color: white;text-decoration: none;">albos</a>
                 <div class="mdl-layout-spacer"></div>
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href=" {{ url('/music') }} ">music</a>
-                    @if (Auth::guest())
-                        <li class="mdl-navigation__link"><a href="{{ url('/login') }}">Login</a></li>
-                        <li class="mdl-navigation__link"><a href="{{ url('/register') }}">Register</a></li>
-                    @else
-                        <li class="mdl-navigation__link" class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->user_id }} <span class="caret"></span>
-                            </a>
+                    <a class="mdl-navigation__link" href=" {{ url('/music') }} ">Musics</a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                        @if (Auth::guest())
+                            <li><a href="{{ url('/login') }}">Login</a></li>
+                            <li><a href="{{ url('/register') }}">Register</a></li>
+                        @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->user_id }} <span class="caret"></span>
+                                </a>
 
-                            <ul class="dropdown-menu" role="menu">
-                                <li class="mdl-navigation__link"><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                            </ul>
-                        </li>
-                    @endif
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ url('/user/home') }}"><i class="fa fa-btn fa-sign-out"></i>Mypage</a></li>
+                                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                </ul>
+                            </li>
+                        @endif
+                    </ul>
                 </nav>
             </div>
         </header>
