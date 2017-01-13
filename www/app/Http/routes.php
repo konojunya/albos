@@ -20,6 +20,7 @@ Route::get('/music/{album_id}', 'musicController@select')->where('music_id', '[0
 Route::get('/music/{music_id}/buy', 'BuyController@buy')->where('music_id', '[0-9]+');
 
 Route::get('/mypage', 'HomeController@index');
+Route::get('/mypage/edit', 'HomeController@edit');
 
 
 // API

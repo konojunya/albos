@@ -33,6 +33,11 @@ class HomeController extends Controller
         return view('user.mypage');
     }
 
+    public function edit()
+    {
+        return view('user.edit');
+    }
+
     public function apiIndex(Request $request)
     {
         $user_id            = $request->user()->user_id;
