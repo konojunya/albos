@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-マイページ | albos
+マイページ編集 | albos
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="/assets/css/mypage.css">
+<link rel="stylesheet" href="/assets/css/mypage_edit.css">
 @endsection
 
 @section('content')
@@ -46,7 +46,7 @@
 
         var test = [
             {
-                music_id: "0000000001",
+                music_id: "000000001",
                 album_title: "×と◯と罪と",
                 band_name: "RADWIMPS",
                 music_title: "いえない",
@@ -54,7 +54,7 @@
                 purchase_date: "2017-01-02 23:58:32"
             },
             {
-                music_id: "0000000001",
+                music_id: "000000001",
                 album_title: "×と◯と罪と",
                 band_name: "RADWIMPS",
                 music_title: "いえない",
@@ -70,7 +70,7 @@
         .done(function(data){
             $(".user-id").removeClass("load").text(data.user_id)
             $(".user-email").removeClass("load").text(data.email)
-            initHistoryData(test)
+            initHistoryData(data.history)
         })
 
         function initHistoryData(data){
