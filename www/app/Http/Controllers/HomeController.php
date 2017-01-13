@@ -24,7 +24,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the user mypage.
      *
      * @return \Illuminate\Http\Response
      */
@@ -151,9 +151,10 @@ class HomeController extends Controller
             $band_names[] = band::where('band_id', $band_id)->value('band_name');
         }
 
-        foreach ($music_titles as $key => $music_title) {
+        foreach ($music_ids as $key => $music_id) {
             $history = array(
-                'music_title'   => $music_title,
+                'music_id'      => $music_id,
+                'music_title'   => $music_titles[$key],
                 'album_title'   => $album_titles[$key],
                 'band_name'     => $band_names[$key],
                 'price'         => $prices[$key],

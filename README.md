@@ -158,6 +158,7 @@ req: no
 res: {
 	history: [
     {
+      music_id: "0000000001",
       album_title: "×と◯と罪と",
       band_name: "RADWIMPS",
       music_title: "いえない",
