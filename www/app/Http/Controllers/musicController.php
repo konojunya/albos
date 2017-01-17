@@ -222,8 +222,6 @@ class musicController extends Controller
 			'musics'       => $musics_json
 		);
 
-	    return array(
-	    	"album" => $album_json
-	    );
+	    return $album_json;
 	}
 }
