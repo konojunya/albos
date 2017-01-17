@@ -145,14 +145,17 @@ class HomeController extends Controller
         $band_names = array();
         foreach ($album_ids as $album_id) {
             $album = album::where('album_id', $album_id)->first();
+            $album_id_array[] = $album_id;
             $album_titles[] = $album->album_title;
             $band_id = $album->band_id;
             
             $band_names[] = band::where('band_id', $band_id)->value('band_name');
         }
 
+
         foreach ($music_ids as $key => $music_id) {
             $history = array(
+                'album_id'      => $album_id_array[$key],
                 'music_id'      => $music_id,
                 'music_title'   => $music_titles[$key],
                 'album_title'   => $album_titles[$key],
