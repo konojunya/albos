@@ -213,7 +213,7 @@ class musicController extends Controller
 			$musics_json[] = $music;
 		}
 
-		$album_json[] = array(
+		$album_json = array(
 			'album_title'  => $album_title,
 			'artwork_path' => $artwork_path,
 			'property'     => $property,
