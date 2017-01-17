@@ -12,21 +12,21 @@
 <main class="mdl-layout__content">
 	<div class="page-content clearfix">
 
-		<div class="page-container clearfix">
+		<div class="page-container clearfix" id="app">
 			
 			<div class="left-box">
 			
 				<div class="cd-jaket-img">
-					<img src="https://img.barks.jp/image/review/1000130245/book_w660.jpg" alt="">
+					<img :src="artwork_path" alt="">
 				</div>
 
-				<p class="release-day">リリース 2017年1月2日</p>
+				<p class="release-day">リリース @{{release}}</p>
 
 			</div>
 			<div class="right-box">
 				
-				<h1 class="album-title">chouchou - EP</h1>
-				<p class="artist-name">上白石萌音</p>
+				<h1 class="album-title">@{{album_title}}</h1>
+				<p class="artist-name">@{{band_name}}</p>
 
 				<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp music-table">
 					<thead>
@@ -38,53 +38,16 @@
 					  </tr>
 					</thead>
 					<tbody>
-					  <tr>
-					    <td class="mdl-data-table__cell--non-numeric">366日</td>
-					    <td>上白石萌音</td>
-					    <td>5:16</td>
+					  <tr v-for="music in musics">
+					    <td class="mdl-data-table__cell--non-numeric">@{{music.music_title}}</td>
+					    <td>@{{band_name}}</td>
+					    <td>@{{music.music_time}}</td>
 					    <td class="price">
-					    	<a href="#">
-					    		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buy-button">250</button>
+					    	<a href="/music/@{{music.music_id}}/reDownload" v-if="music.isBuy">
+					    		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buy-button redownload-button"><i class="material-icons">cloud_download</i></button>
 					    	</a>
-					    </td>
-					  </tr>
-					  <tr>
-					    <td class="mdl-data-table__cell--non-numeric">Woman "Wの悲劇"より</td>
-					    <td>上白石萌音</td>
-					    <td>4:05</td>
-					    <td class="price">
-					    	<a href="#">
-					    		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buy-button">250</button>
-					    	</a>
-					    </td>
-					  </tr>
-					  <tr>
-					    <td class="mdl-data-table__cell--non-numeric">変わらないもの（Studio Live）</td>
-					    <td>上白石萌音</td>
-					    <td>5:21</td>
-					    <td class="price">
-					    	<a href="#">
-					    		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buy-button">250</button>
-					    	</a>
-					    </td>
-					  </tr>
-					  <tr>
-					    <td class="mdl-data-table__cell--non-numeric">On My Own（from musical "Les Miserables"）</td>
-					    <td>上白石萌音</td>
-					    <td>3:36</td>
-					    <td class="price">
-					    	<a href="#">
-					    		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buy-button">250</button>
-					    	</a>
-					    </td>
-					  </tr>
-					  <tr>
-					    <td class="mdl-data-table__cell--non-numeric">なんでもないや（movie ver.）</td>
-					    <td>上白石萌音</td>
-					    <td>5:49</td>
-					    <td class="price">
-					    	<a href="#">
-					    		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buy-button">250</button>
+					    	<a href="/music/@{{music.music_id}}/buy" v-else>
+					    		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buy-button first-buy">¥ @{{music.price}}</button>
 					    	</a>
 					    </td>
 					  </tr>
@@ -97,4 +60,59 @@
 
 	</div>
 </main>
+@endsection
+@section("javascript")
+
+<script>
+	(function($){
+
+		(function initView(album_id){
+			$.ajax({
+				url: "/api/music/detail?album_id="+album_id,
+				type: "GET"
+			})
+			.done(function(data){
+				data.artwork_path = "https://img.barks.jp/image/review/1000130245/book_w660.jpg"
+				var renderData = {
+					release: data.release,
+					band_name: data.band_name,
+					musics: data.musics,
+					album_title: data.album_title,
+					artwork_path: data.artwork_path
+				}
+				reRenderView(renderData)
+			})
+		})(window.location.pathname.replace(/\/music\//,""))
+
+		var vm = new Vue({
+			el: "#app",
+			data: {
+				release: "",
+				band_name: "",
+				musics: [],
+				album_title: "",
+				artwork_path: ""
+			}
+		})
+
+		function reRenderView(renderData){
+			Vue.nextTick(function(){
+				vm.release = renderData.release
+				vm.band_name = renderData.band_name
+				vm.musics = renderData.musics
+				vm.album_title = renderData.album_title
+				vm.artwork_path = renderData.artwork_path
+			})
+		}
+
+		$("#app").on("click",".first-buy",function(e){
+			e.preventDefault()
+			e.target.innerHTML = "<i class='material-icons'>cloud_download</i>"
+			$(this).removeClass("first-buy")
+			window.location.href = e.target.parentNode.href
+		})
+
+	})(jQuery)
+</script>
+
 @endsection

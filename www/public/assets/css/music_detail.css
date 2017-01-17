@@ -75,11 +75,7 @@ body,html {
 	text-align: center;
 }
 .right-box td.price button.buy-button{
-	background-color: #6180EB;
-	color: #293660;
+	background-color: #668BFF;
+	color: #101320;
 	font-weight: bold;
-}
-.right-box td.price button:before{
-	content: "¥";
-	letter-spacing: 5px;
 }
