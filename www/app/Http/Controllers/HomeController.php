@@ -119,44 +119,30 @@ class HomeController extends Controller
         //購入履歴
         $purchase_details = sales_description::where('user_id', $id)->get();
 
-        $music_ids = array();
-        $purchase_dates = array();
         foreach ($purchase_details as $purchase_detail) {
-            $music_ids[] = $purchase_detail->music_id;
+            $music_id = $purchase_detail->music_id;
+            // $music_ids[] = $music_id; 返さなくていい
             $purchase_dates[] = $purchase_detail->purchase_date;
+
+            $music = music::where('music_id', $music_id)->first();
+
+            $music_titles[] = $music->music_title;
+            $prices[] = $music->price;
+            $album_ids[] = $music->album_id;
         }
 
-        $musics = array();
-        $music_titles = array();
-        $album_ids = array();
-        $prices = array();
-        foreach ($music_ids as $music_id) {
-            $musics = music::where('music_id', $music_id)->get();
-
-            foreach ($musics as $music) {
-                $music_titles[] = $music->music_title;
-                $album_ids[] = $music->album_id;
-                $prices[] = $music->price;
-            }
-            
-        }
-
-        $album_titles = array();
-        $band_names = array();
         foreach ($album_ids as $album_id) {
             $album = album::where('album_id', $album_id)->first();
-            $album_id_array[] = $album_id;
             $album_titles[] = $album->album_title;
             $band_id = $album->band_id;
             
             $band_names[] = band::where('band_id', $band_id)->value('band_name');
         }
 
-
-        foreach ($music_ids as $key => $music_id) {
+        foreach ($album_ids as $key => $album_id) {
             $history = array(
-                'album_id'      => $album_id_array[$key],
-                'music_id'      => $music_id,
+                'album_id'      => $album_id,
+                'music_id'      => $album_id,
                 'music_title'   => $music_titles[$key],
                 'album_title'   => $album_titles[$key],
                 'band_name'     => $band_names[$key],
@@ -169,3 +155,7 @@ class HomeController extends Controller
         return $this->history_json;
     }
 }
+
+
+
+

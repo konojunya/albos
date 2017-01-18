@@ -148,15 +148,15 @@ class musicController extends Controller
 	public function apiSelect(Request $request)
 	{
 		$id = null;
+		$isLogin = false;
+
 		// ユーザーがログインしているかチェック
-		if (!Auth::check()) {
-			// ログインしていなければfalseを返す
-			return array(
-				"login" => false
-			);
+		if (Auth::check()) {
+			$isLogin = true;
+			// ユーザーIDを取得
+			$id = $request->user()->id;
 		}
-		// ユーザーIDを取得
-		$id = $request->user()->id;
+		// echo $isLogin;
 
 		// アルバムIDを取得
 		$album_id = $request->input('album_id');
@@ -191,10 +191,11 @@ class musicController extends Controller
 			$music_data_paths[$i] = $music->music_data_path;
 			$music_times[$i]      = $music->music_time;
 			$isBuy[$i]            = false;
-			if (sales_description::where('user_id', $id)->where('music_id', $music->music_id)->count()) {
-				$isBuy[$i]        = true;
+			if ($isLogin) { //ログインしている時だけ購入履歴を見る
+				if (sales_description::where('user_id', $id)->where('music_id', $music->music_id)->count()) {
+					$isBuy[$i] = true;
+				}
 			}
-			// echo $music->music_id." - ".$isBuy[$i].",";
 			$i++;
 		}
 
