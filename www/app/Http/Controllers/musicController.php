@@ -122,7 +122,7 @@ class musicController extends Controller
 
 		$band_names   = array();
 		// バンドテーブルからバンド名取得
-		for ($i=0; $i < count($band_ids); $i++) { 
+		for ($i=0; $i < count($band_ids); $i++) {
 			$band_names[$i] = band::where('band_id', $band_ids[$i])->value('band_name');
 		}
 
@@ -137,6 +137,7 @@ class musicController extends Controller
 			   	"album_title" => $album_titles[$key],
 			   	"band_name" => $band_names[$key]
 			);
+			echo $band_names[$key];
 			$albums_json[] = $album;
 		}
 
