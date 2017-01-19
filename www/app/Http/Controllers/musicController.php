@@ -137,7 +137,7 @@ class musicController extends Controller
 			   	"album_title" => $album_titles[$key],
 			   	"band_name" => $band_names[$key]
 			);
-			echo $band_names[$key];
+			// echo $band_names[$key];
 			$albums_json[] = $album;
 		}
 
