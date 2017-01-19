@@ -17,7 +17,7 @@
 			<div class="left-box">
 			
 				<div class="cd-jaket-img">
-					<img :src="artwork_path" alt="">
+					<img :src="artwork_path" alt="" class="mdl-shadow--4dp">
 				</div>
 
 				<p class="release-day">リリース @{{release}}</p>

@@ -12,6 +12,21 @@ body,html{
 	width: 100%!important;
 }
 
+.not-load{
+	display: none;
+}
+
+.loading{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+}
+.loading .spinner{
+	width: 70px;
+	height: 70px;
+}
+
 .truck-wrapper{
 	width: 100%;
 }

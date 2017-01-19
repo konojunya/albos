@@ -31,8 +31,8 @@ body,html {
 
 /* left box */
 .left-box{
-	width: 20%;
-	margin-right: 5%;
+	width: 21%;
+	margin-right: 3%;
 	float: left;
 }
 .left-box .cd-jaket-img{
@@ -52,17 +52,19 @@ body,html {
 
 /* right box */
 .right-box{
-	width: 75%;
+	width: 76%;
 	float: left;
 }
 .right-box .album-title{
 	font-weight: normal;
+	margin: 0;
+	margin-bottom: 10px;
 }
 .right-box .artist-name{
 	font-size: .9em;
 }
 .right-box .music-table{
-	margin-top: 5%;
+	margin-top: 20px;
 }
 
 .right-box .music-table{
