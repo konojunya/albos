@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-マイページ編集 | albos
+マイページ編集完了 | albos
 @endsection
 
 @section('css')
@@ -17,10 +17,9 @@
             @include('user.userInfo')
         </div>
         <div class="right-box">
-            @include('user.editForm')
+            @include('user.editResult')
         </div>
     </div>
   </div>
 </main>
 @endsection
-

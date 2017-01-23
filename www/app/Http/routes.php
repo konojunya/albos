@@ -23,7 +23,8 @@ Route::get('/music/{music_id}/buy', 'BuyController@buy')->where('music_id', '[0-
 Route::get('/music/{music_id}/reDownload', 'BuyController@reDownload')->where('music_id', '[0-9]+');
 
 Route::get('/mypage', 'HomeController@index');
-Route::get('/mypage/edit', 'HomeController@edit');
+Route::get('/mypage/edit', 'HomeController@showEditForm');
+Route::post('/mypage/edit', 'HomeController@editProcess');
 
 
 // API
