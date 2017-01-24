@@ -9,6 +9,7 @@ use App\music;
 use App\sales_description;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\Requests\ApiEditRequest;
 
 class HomeController extends Controller
 {
@@ -38,6 +39,67 @@ class HomeController extends Controller
         return view('user.edit');
     }
 
+    public function editProcess(ApiEditRequest $request)
+    {
+        //登録情報を更新するユーザーの特定
+        $id = $request->user()->id;
+        
+        //更新情報の受け取り
+        $user_id = $request->input('user_id');
+        $user_name = $request->input('user_name');
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $credit_card_number = $request->input('credit_card_number');
+
+        $res_password = '';
+        for ($i=0; $i < strlen($password); $i++) { 
+            $res_password = $res_password.'*';
+        }
+
+        // パスワードの暗号化
+        $password = bcrypt($password);
+
+        // 登録情報の更新
+        User::where('id', $id)
+            ->update([
+                'user_id'            => $user_id,
+                'user_name'          => $user_name,
+                'credit_card_number' => $credit_card_number,
+                'email'              => $email,
+                'password'           => $password
+                ]);
+
+        $user_json = array(
+            'user_id'            => $user_id,
+            'user_name'          => $user_name,
+            'credit_card_number' => $credit_card_number,
+            'email'              => $email,
+            'res_password'       => $res_password
+        );
+
+        return view('user.editComp')->with($user_json);
+    }
+
+    public function showEditForm(Request $request)
+    {
+        $user_id            = $request->user()->user_id;
+        $user_name          = $request->user()->user_name;
+        $credit_card_number = $request->user()->credit_card_number;
+        $email              = $request->user()->email;
+
+        $history = $this->apiHistory($request);
+
+        $user_json = array(
+            'user_id'            => $user_id,
+            'user_name'          => $user_name,
+            'email'              => $email,
+            'credit_card_number' => $credit_card_number,
+            'history'            => $history
+        );
+
+        return view('user.edit')->with($user_json);
+    }
+
     public function apiIndex(Request $request)
     {
         $user_id            = $request->user()->user_id;
@@ -51,13 +113,14 @@ class HomeController extends Controller
             'user_id'            => $user_id,
             'user_name'          => $user_name,
             'email'              => $email,
+            'credit_card_number' => $credit_card_number,
             'history'            => $history
         );
 
         return $user_json;
     }
 
-    public function apiEdit(Request $request)
+    public function apiEdit(ApiEditRequest $request)
     {
         //登録情報を更新するユーザーの特定
         $id = $request->user()->id;
@@ -65,25 +128,9 @@ class HomeController extends Controller
         //更新情報の受け取り
         $user_id = $request->input('user_id');
         $user_name = $request->input('user_name');
-        $credit_card_number = $request->input('credit_card_number');
         $email = $request->input('email');
         $password = $request->input('password');
-
-        if ($user_id == null) {
-            return;
-        }
-        if ($user_name == null) {
-            return;
-        }
-        if ($credit_card_number == null) {
-            return;
-        }
-        if ($email == null) {
-            return;
-        }
-        if ($password == null) {
-            return;
-        }
+        $credit_card_number = $request->input('credit_card_number');
 
         // パスワードの暗号化
         $password = bcrypt($password);
@@ -113,6 +160,8 @@ class HomeController extends Controller
 
     public function apiHistory($request)
     {
+        $album_ids = array();
+
         //履歴を表示するユーザーを特定
         $id = $request->user()->id;
 
@@ -135,7 +184,7 @@ class HomeController extends Controller
             $album = album::where('album_id', $album_id)->first();
             $album_titles[] = $album->album_title;
             $band_id = $album->band_id;
-            
+
             $band_names[] = band::where('band_id', $band_id)->value('band_name');
         }
 
@@ -151,6 +200,7 @@ class HomeController extends Controller
             );
             $this->history_json[] = $history;
         }
+
 
         return $this->history_json;
     }
