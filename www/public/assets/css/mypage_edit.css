@@ -44,20 +44,7 @@ body,html{
 }
 
 .left-box .settings{
-	display: inline-block;
-	font-size: 1.5rem;
-	letter-spacing: 2px;
-	padding: 10px;
-	margin-top: 30px;
-	color: white;
-	background-color: #4764A7;
-	border-radius: 10px;
-	border-bottom: 3px solid #1E2B44;
-}
-.left-box .settings:active{
-	position: relative;
-	bottom: -3px;
-	border: 0;
+	margin-top: 20px;
 }
 
 .right-box{

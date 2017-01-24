@@ -28,7 +28,7 @@
 				<h1 class="album-title">@{{album_title}}</h1>
 				<p class="artist-name">@{{band_name}}</p>
 
-				<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp music-table">
+				<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp music-table">
 					<thead>
 					  <tr>
 					    <th class="mdl-data-table__cell--non-numeric title">タイトル</th>
