@@ -10,7 +10,7 @@
 		var self = this;
 		
 		this.source = this.audioCtx.createBufferSource()
-		request = new XMLHttpRequest()
+		var request = new XMLHttpRequest()
 
 		request.open("GET",filename,true)
 		request.responseType = "arraybuffer";
