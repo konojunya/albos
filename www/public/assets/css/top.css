@@ -1,76 +1,65 @@
-*,
-*::after,
-*::before {
+body,html{
+  width: 100%;
+  height: 100%;
+}
+*{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-li {
+.music-list-wrapper{
+  width: 100%;
+  padding: 50px 0;
+}
+
+.music-list-wrapper h2{
+  margin: 20px;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.music-list-wrapper .truck-list{
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+}
+.music-list-wrapper .truck-list .truck-item{
+  min-width: 150px;
+  max-width: 150px;
+  margin: 20px;
   list-style: none;
+  position: relative;
 }
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-img {
+.music-list-wrapper .truck-list .truck-item a{
   display: block;
-}
-
-body, html {
   width: 100%;
   height: 100%;
 }
-
-.hidden {
-  display: none;
+.music-list-wrapper .truck-list .truck-item .image{
+  width: 100%;
+  padding: 0;
 }
-
-.clearfix::after {
-  content: "";
+.music-list-wrapper .truck-list .truck-item .image img{
   display: block;
-  clear: both;
-}
-
-/*--------------------main-visual*/
-.main-visual {
   width: 100%;
-}
-.main-visual .row-top {
-  width: 100%;
-  height: 130px;
-  background-color: #333;
-  overflow: hidden;
-}
-.main-visual .row-middle {
-  width: 100%;
-  height: 180px;
-  background-color: #444;
-  overflow: hidden;
-}
-.main-visual .row-bottom {
-  width: 100%;
-  height: 130px;
-  background-color: #555;
-  overflow: hidden;
-}
-.main-visual .image-cell {
   height: 100%;
 }
-.main-visual img {
-  display: block;
-  float: left;
-  width: auto;
-  height: 100%;
+.music-list-wrapper .truck-list .truck-item .album-title{
+  width: 100%;
+  text-align: left;
+  color: #2f2f2f;
+  margin: 0;
+  font-size: 0.9em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
-/*-------------------/main-visual*/
-
-
-/*----------------album-container*/
-.album-container {
-
+.music-list-wrapper .truck-list .truck-item .band-name{
+  text-align: left;
+  margin: 0;
+  color: #989898;
+  font-size: 0.9em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
-/*---------------/album-container*/
-
