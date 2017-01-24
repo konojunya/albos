@@ -23,7 +23,7 @@
         <div class="right-box">
             <p class="buy-history">購入履歴</p>
 
-            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp music-table _hidden">
+            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp music-table _hidden">
                 <thead>
                   <tr>
                     <th class="mdl-data-table__cell--non-numeric title">曲名</th>
