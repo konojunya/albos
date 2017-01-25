@@ -140,7 +140,9 @@
 				var musicpath = e.target.dataset.musicpath;
 				audioPlayer.play(musicpath);
 				setTimeout(function(){
-					audioPlayer.stop()
+					if(audioPlayer.isSomeMusicPlaying){
+						audioPlayer.stop();
+					}
 				},30*1000)
 			}else{
 				audioPlayer.stop();
