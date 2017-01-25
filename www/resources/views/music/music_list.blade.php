@@ -1,83 +1,752 @@
 @extends('layouts.app')
 
 @section('title')
-曲一覧 | albos
+albos
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="/assets/css/music_list.css">
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link rel="stylesheet" href="/assets/css/top.css">
 @endsection
 
 @section('content')
-<main class="mdl-layout__content">
-	<div class="page-content" id="app">
 
-		<div class="loading _hidden">
-		  <div class="mdl-spinner mdl-js-spinner is-active spinner"></div>
-		</div>
+	<ul class="top-view" style="list-style: none;">
+		<li class="gallery"><img src="/assets/images/top-1.png" alt=""></li>
+		<li class="gallery"><img src="/assets/images/top-2.png" alt=""></li>
+		<li class="gallery"><img src="/assets/images/top-3.png" alt=""></li>
+		<li class="gallery"><img src="/assets/images/top-4.png" alt=""></li>
+		<li class="gallery"><img src="/assets/images/top-5.png" alt=""></li>
+		<li class="gallery"><img src="/assets/images/top-6.png" alt=""></li>
+		<li class="gallery"><img src="/assets/images/top-7.png" alt=""></li>
+		<li class="gallery"><img src="/assets/images/top-8.png" alt=""></li>
+		<li class="gallery"><img src="/assets/images/top-9.png" alt=""></li>
+		<li class="gallery"><img src="/assets/images/top-10.png" alt=""></li>
+		<li class="gallery"><img src="/assets/images/top-11.png" alt=""></li>
+		<li class="gallery"><img src="/assets/images/top-12.png" alt=""></li>
+	</ul>
 
-		<div class="truck-wrapper topic not-load">
-			<h2>注目トラック</h2>
+	<div class="music-list-wrapper">
+
+		<h2>新着ミュージック</h2>
 			<ul class="truck-list">
-				<li v-for="item in music" class="truck-item">
-					<a href="/music/@{{item.album_id}}">
+				<li class="truck-item">
+					<a href="/music/0000000001">
 				  	<div class="image">
-				  		<img src="@{{item.artwork_path}}" alt="">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
 				  	</div>
 				  	<p class="album-title">
-				    	@{{item.album_title}}
+				  		君の名は	
 				  	</p>
 				  	<p class="band-name">
-				  		@{{item.band_name}}
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
 				  	</p>
 					</a>
 				</li>
 			</ul>
-		</div>
 
-		<div class="truck-wrapper topic not-load">
-			<h2>最新リリース</h2>
+		<h2>注目トラック</h2>
 			<ul class="truck-list">
-				<li v-for="item in music" class="truck-item">
-					<a href="/music/@{{item.album_id}}">
+				<li class="truck-item">
+					<a href="/music/0000000001">
 				  	<div class="image">
-				  		<img src="@{{item.artwork_path}}" alt="">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
 				  	</div>
 				  	<p class="album-title">
-				    	@{{item.album_title}}
+				  		君の名は	
 				  	</p>
 				  	<p class="band-name">
-				  		@{{item.band_name}}
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
 				  	</p>
 					</a>
 				</li>
 			</ul>
-		</div>
 
-		<div class="truck-wrapper topic not-load">
-			<h2>コンピレーション</h2>
+		<h2>最新リリース</h2>
 			<ul class="truck-list">
-				<li v-for="item in music" class="truck-item">
-					<a href="/music/@{{item.album_id}}">
+				<li class="truck-item">
+					<a href="/music/0000000001">
 				  	<div class="image">
-				  		<img src="@{{item.artwork_path}}" alt="">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
 				  	</div>
 				  	<p class="album-title">
-				    	@{{item.album_title}}
+				  		君の名は	
 				  	</p>
 				  	<p class="band-name">
-				  		@{{item.band_name}}
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
+				  	</p>
+					</a>
+				</li>
+				<li class="truck-item">
+					<a href="/music/0000000001">
+				  	<div class="image">
+				  		<img src="http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG" alt="">
+				  	</div>
+				  	<p class="album-title">
+				  		君の名は	
+				  	</p>
+				  	<p class="band-name">
+				  		RADWINMPS
 				  	</p>
 					</a>
 				</li>
 			</ul>
-		</div>
 
 	</div>
-</main>
+
 @endsection
 
 @section('javascript')
-<script src="/assets/js/vue.min.js"></script>
-<script src="/assets/js/music_list.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="/assets/js/top.js"></script>
 @endsection
