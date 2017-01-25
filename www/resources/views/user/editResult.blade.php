@@ -28,14 +28,6 @@
             </div>
 
             <div class="form-group">
-                <label for="password" class="col-md-4 control-label">パスワード</label>
-
-                <div class="col-md-6">
-                    {{ $res_password }}
-                </div>
-            </div>
-
-            <div class="form-group">
                 <label for="password-confirm" class="col-md-4 control-label">クレジットカード番号</label>
 
                 <div class="col-md-6">

@@ -13,19 +13,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function () {
+    return view('user.mypage');
+});
+
 Route::auth();
+
 
 Route::get('/music', 'musicController@all');
 Route::get('/music/{album_id}', 'musicController@select')->where('music_id', '[0-9]+');
 
-Route::get('/music/{music_id}/buy', 'BuyController@buy')->where('music_id', '[0-9]+');
+Route::get('/music/{music_id}/buy', ['middleware' => 'auth', 'uses' => 'BuyController@buy'])->where('music_id', '[0-9]+');
 //postに変える
 Route::get('/music/{music_id}/reDownload', 'BuyController@reDownload')->where('music_id', '[0-9]+');
 
 Route::get('/mypage', 'HomeController@index');
 Route::get('/mypage/edit', 'HomeController@showEditForm');
 Route::post('/mypage/edit', 'HomeController@editProcess');
-
+Route::get('/mypage/edit/password', 'HomeController@showPasswordEdit');
+// Route::post('/mypage/edit/password', 'Auth\AuthController@hoge');
+Route::post('/mypage/edit/password', 'HomeController@passwordEditProcess');
+Route::get('/mypage/edit/password/result', 'HomeController@showPasswordEditResult');
 
 // API
 Route::get('/api/music','musicController@apiAll');

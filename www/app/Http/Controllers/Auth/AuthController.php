@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use App\Http\Requests\PasswordEditRequest;
+use Illuminate\Http\Request;
+use App\Http\Requests;
+
 
 class AuthController extends Controller
 {
@@ -29,6 +34,7 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
+    protected $redirectPath = '/mypage';
 
     /**
      * Create a new authentication controller instance.
@@ -38,6 +44,12 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+    }
+
+    public function hoge(Request $request)
+    {
+        echo 'hoge';
+        exit();
     }
 
     /**
@@ -71,7 +83,40 @@ class AuthController extends Controller
             'user_name' => $data['user_name'],
             'password' => bcrypt($data['password']),
             'credit_card_number' => $data['credit_card_number'],
-            'email' => $data['email'],            
+            'email' => $data['email'],
         ]);
+    }
+
+    /**
+     * 認証を処理する
+     *
+     * @return Response
+     */
+    public function passwordEditProcess()
+    {
+        // echo 'hoge';
+        // exit();
+        // $user = [
+        //     'email'    => Auth::user()->email,
+        //     'password' => Auth::user()->password
+        // ];
+
+        // if (Auth::attempt($user)) {
+        //     // 認証に成功した
+        //     Auth::user()->password = bcrypt($request->input('new_password'));
+        //     Auth::user()->save();
+        //     Auth::logout();
+
+        //     $user = [
+        //         'email'    => Auth::user()->email,
+        //         'password' => $request->input('new_password')
+        //     ];
+        //     Auth::login($user, true);
+
+        // } else {
+        //     return redirect()->back()->withErrors([
+        //         'errorMessage' => 'パスワードが違います'
+        //     ]);
+        // }
     }
 }

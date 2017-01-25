@@ -32,7 +32,6 @@ class ApiEditRequest extends Request
             'user_id' => 'required|max:16|alpha_num',
             'user_name' => 'required|max:10',
             'email' => 'required|email',
-            'password' => 'required|min:8',
             'credit_card_number' => 'required',
         ];
     }

@@ -67,3 +67,7 @@ body,html{
 .right-box .no-history a{
 	color: #FC0054;
 }
+
+.right-button {
+	float: right;
+}

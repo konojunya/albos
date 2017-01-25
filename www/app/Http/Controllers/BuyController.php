@@ -20,7 +20,7 @@ class BuyController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     public function buy(Request $request, $music_id)
@@ -67,6 +67,11 @@ class BuyController extends Controller
         //ダウンロード時のファイル名を作成
         $file_name = $music_title.' - '.$band_name.'.mp3';
 
+        return response()->download($pathToFile, $file_name);
+    }
+
+    public function downloadMusic($pathToFile, $file_name)
+    {
         return response()->download($pathToFile, $file_name);
     }
 
@@ -134,6 +139,7 @@ class BuyController extends Controller
 
         //ダウンロード時のファイル名を作成
         $file_name = $music_title.' - '.$band_name.'.mp3';
+
 
         return response()->download($pathToFile, $file_name);
         // echo response()->download($pathToFile, $file_name);

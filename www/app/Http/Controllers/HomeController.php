@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Hash;
+use Auth;
 use App\User;
 use App\album;
 use App\band;
@@ -10,6 +12,8 @@ use App\sales_description;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Requests\ApiEditRequest;
+use App\Http\Requests\PasswordEditRequest;
+
 
 class HomeController extends Controller
 {
@@ -37,6 +41,52 @@ class HomeController extends Controller
     public function edit()
     {
         return view('user.edit');
+    }
+
+    public function showEditForm(Request $request)
+    {
+        $user_id            = $request->user()->user_id;
+        $user_name          = $request->user()->user_name;
+        $credit_card_number = $request->user()->credit_card_number;
+        $email              = $request->user()->email;
+
+        $history = $this->apiHistory($request);
+
+        $user_json = array(
+            'user_id'            => $user_id,
+            'user_name'          => $user_name,
+            'email'              => $email,
+            'credit_card_number' => $credit_card_number,
+            'history'            => $history
+        );
+
+        return view('user.edit')->with($user_json);
+    }
+
+    public function showPasswordEdit(Request $request)
+    {
+        $user_id            = $request->user()->user_id;
+        $email              = $request->user()->email;
+
+        $user_json = array(
+            'user_id'            => $user_id,
+            'email'              => $email
+        );
+
+        return view('user.passwordEdit')->with($user_json);
+    }
+
+    public function showPasswordEditResult(Request $request)
+    {
+        $user_id            = $request->user()->user_id;
+        $email              = $request->user()->email;
+
+        $user_json = array(
+            'user_id'            => $user_id,
+            'email'              => $email
+        );
+
+        return view('user.passwordEditResult')->with($user_json);
     }
 
     public function editProcess(ApiEditRequest $request)
@@ -80,25 +130,75 @@ class HomeController extends Controller
         return view('user.editComp')->with($user_json);
     }
 
-    public function showEditForm(Request $request)
+    /**
+     * 認証を処理する
+     *
+     * @return Response
+     */
+    public function passwordEditProcess(PasswordEditRequest $request)
     {
-        $user_id            = $request->user()->user_id;
-        $user_name          = $request->user()->user_name;
-        $credit_card_number = $request->user()->credit_card_number;
-        $email              = $request->user()->email;
+        $user = [
+            'email'    => Auth::user()->email,
+            'password' => $request->input('now_password')
+        ];
 
-        $history = $this->apiHistory($request);
+        // var_dump($user);
 
-        $user_json = array(
-            'user_id'            => $user_id,
-            'user_name'          => $user_name,
-            'email'              => $email,
-            'credit_card_number' => $credit_card_number,
-            'history'            => $history
-        );
+        if (Auth::attempt($user)) {
+            // 認証に成功した
+            Auth::user()->password = bcrypt($request->input('new_password'));
+            Auth::user()->save();
 
-        return view('user.edit')->with($user_json);
+            return redirect('/mypage/edit/password/result');
+
+        } else {
+            return redirect()->back()->withErrors([
+                'now_password' => 'パスワードが違います'
+            ]);
+        }
     }
+
+    // public function passwordEditProcess(PasswordEditRequest $request)
+    // {
+    //     $msg = "";
+    //     $now_password = $request->input('now_password');
+    //     if (!$this->nowPasswordCheck($now_password)) {
+    //         // $msg = 'パスワードが違います';
+    //         return 'パスワードが違います';
+    //     }
+
+    //     $new_password = $request->input('new_password');
+    //     $new_password_confirmation = $request->input('new_password_confirmation');
+
+    //     if ($new_password != $new_password_confirmation) {
+    //         // $msg = '新しいパスワードと新しいパスワードの確認が一致しません';
+    //         return '新しいパスワードと新しいパスワードの確認が一致しません';
+    //     }
+
+    //     $new_password = Hash::make($new_password);
+    //     $this->passwordUpdate($id, $new_password);
+
+    //     // $msg = '変更が完了しました';
+    //     return '変更が完了しました';
+    //     // return view('')
+    // }
+
+    // public function nowPasswordCheck($now_password)
+    // {
+    //     $password = $request->user()->password;
+
+    //     if (Hash::check($now_password, $password)) {
+    //         return true;
+    //     }
+
+    //     return false;
+    // }
+
+    // public function passwordUpdate($id, $new_password)
+    // {
+    //     User::where('id', $id)
+    //         ->update(['password' => $new_password]);
+    // }
 
     public function apiIndex(Request $request)
     {

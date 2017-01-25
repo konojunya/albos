@@ -46,20 +46,6 @@
                 </div>
             </div>
 
-            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                <label for="password" class="col-md-4 control-label">パスワード</label>
-
-                <div class="col-md-6">
-                    <input id="password" type="password" class="form-control" name="password">
-
-                    @if ($errors->has('password'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('password') }}</strong>
-                        </span>
-                    @endif
-                </div>
-            </div>
-
             <div class="form-group{{ $errors->has('credit_card_number') ? ' has-error' : '' }}">
                 <label for="password-confirm" class="col-md-4 control-label">クレジットカード番号</label>
 
@@ -76,7 +62,10 @@
 
             <div class="form-group">
                 <div class="col-md-6 col-md-offset-4">
-                    <button type="submit" class="btn btn-primary">
+                    <a href="/mypage/edit/password" class="btn btn-primary">
+                        <i class="fa fa-btn fa-user"></i> パスワードを変更する
+                    </a>
+                    <button type="submit" class="btn btn-primary right-button">
                         <i class="fa fa-btn fa-user"></i> 上記の内容に変更する
                     </button>
                 </div>

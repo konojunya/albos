@@ -139,6 +139,8 @@ return [
         'password' => 'パスワード',
         'password_confirmation' => '確認用パスワード',
         'credit_card_number' => 'クレジットカード番号',
+        'now_password' => 'パスワード',
+        'new_password' => '新しいパスワード',
     ],
 
 ];
