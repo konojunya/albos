@@ -139,6 +139,9 @@
 				$(this).text("pause_circle_outline");
 				var musicpath = e.target.dataset.musicpath;
 				audioPlayer.play(musicpath);
+				setTimeout(function(){
+					audioPlayer.stop()
+				},30*1000)
 			}else{
 				audioPlayer.stop();
 			}
