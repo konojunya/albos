@@ -65,7 +65,7 @@
                     <a href="/mypage/edit/password" class="btn btn-primary">
                         <i class="fa fa-btn fa-user"></i> パスワードを変更する
                     </a>
-                    <button type="submit" class="btn btn-primary right-button">
+                    <button type="submit" class="btn btn-primary right-button" style="background-color: #FD7B08;border: 0;">
                         <i class="fa fa-btn fa-user"></i> 上記の内容に変更する
                     </button>
                 </div>

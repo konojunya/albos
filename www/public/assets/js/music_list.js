@@ -22,6 +22,7 @@
 		albums.map(function(i){
 			i.artwork_path = "http://store.universal-music.co.jp/contents/shop/um/img/goods/G10/UPCH-20423.JPG"
 		})
+		console.log(albums)
 		Vue.nextTick(function(){
 			vm.music = albums
 		})
