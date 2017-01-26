@@ -62,10 +62,10 @@
 
             <div class="form-group">
                 <div class="col-md-6 col-md-offset-4">
-                    <a href="/mypage/edit/password" class="btn btn-primary">
+                    <a href="/mypage/edit/password" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
                         <i class="fa fa-btn fa-user"></i> パスワードを変更する
                     </a>
-                    <button type="submit" class="btn btn-primary right-button" style="background-color: #FD7B08;border: 0;">
+                    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored right-button">
                         <i class="fa fa-btn fa-user"></i> 上記の内容に変更する
                     </button>
                 </div>

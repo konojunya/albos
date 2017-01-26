@@ -17,7 +17,7 @@
             <h1 class="user-id load"></h1>
             <p class="user-email load"></p>
 
-            <a href="/mypage/edit" class="settings mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" style="background-color: #FD7B08;">設定変更</a>
+            <a href="/mypage/edit" class="settings mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">設定変更</a>
 
         </div>
         <div class="right-box">
