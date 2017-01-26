@@ -31,14 +31,12 @@ Route::get('/mypage', 'HomeController@index');
 Route::get('/mypage/edit', 'HomeController@showEditForm');
 Route::post('/mypage/edit', 'HomeController@editProcess');
 Route::get('/mypage/edit/password', 'HomeController@showPasswordEdit');
-// Route::post('/mypage/edit/password', 'Auth\AuthController@hoge');
 Route::post('/mypage/edit/password', 'HomeController@passwordEditProcess');
 Route::get('/mypage/edit/password/result', 'HomeController@showPasswordEditResult');
 
 // API
 Route::get('/api/music','musicController@apiAll');
 Route::get('/api/music/detail','musicController@apiSelect');
-// Route::get('/api/band/{band_id}/music','musicController@apiBand');
 
 Route::get('/api/user/home','HomeController@apiIndex');
 Route::get('/api/user/home/edit','HomeController@apiEdit');

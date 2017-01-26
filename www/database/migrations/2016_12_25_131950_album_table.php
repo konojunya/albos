@@ -15,7 +15,7 @@ class AlbumTable extends Migration
         Schema::create('album', function (Blueprint $table) {
             $table->string('album_id', 10)->unique();
             $table->string('album_title', 20);
-            $table->string('artwork_path', 40);
+            $table->string('artwork_path', 100);
             $table->string('property', 20);
             $table->date('release');
             $table->string('band_id', 10);

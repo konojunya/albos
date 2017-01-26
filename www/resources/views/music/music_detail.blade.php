@@ -85,7 +85,7 @@
 				setTimeout(function(){
 					$(".not-load").show()
 					$(".loading").hide()
-					data.artwork_path = "https://img.barks.jp/image/review/1000130245/book_w660.jpg"
+					// data.artwork_path = "https://img.barks.jp/image/review/1000130245/book_w660.jpg"
 					var renderData = {
 						release: data.release,
 						band_name: data.band_name,
