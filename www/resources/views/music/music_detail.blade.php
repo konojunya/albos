@@ -141,9 +141,10 @@
 				audioPlayer.play(musicpath);
 				setTimeout(function(){
 					if(audioPlayer.isSomeMusicPlaying){
+						$(".doPlayButton").text("play_circle_outline");
 						audioPlayer.stop();
 					}
-				},30*1000)
+				},60*1000)
 			}else{
 				audioPlayer.stop();
 			}
