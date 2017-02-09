@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+/* common css */
+body,html {
+	width: 100%;
+	height: 100%;
+}
+
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+._hidden {
+	display: none;
+}
+
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.not-load{
+	display: none;
+}
+
+.loading{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+}
+.loading .spinner{
+	width: 70px;
+	height: 70px;
+}
+
+/* end common css */
+
+.page-container{
+	padding: 3%;
+}
+
+/* left box */
+.left-box{
+	width: 21%;
+	margin-right: 3%;
+	float: left;
+}
+.left-box .cd-jaket-img{
+	width: 100%;
+}
+.left-box .cd-jaket-img img{
+	display: block;
+	width: 100%;
+}
+.left-box .release-day{
+	color: #5E5F5F;
+	border-top: 1px solid gray;
+	margin: 5% 0;
+	padding: 3% 0;
+	font-size: .9em;
+}
+
+/* right box */
+.right-box{
+	width: 76%;
+	float: left;
+}
+.right-box .album-title{
+	font-weight: normal;
+	margin: 0;
+	margin-bottom: 10px;
+}
+.right-box .artist-name{
+	font-size: .9em;
+}
+.right-box .music-table{
+	margin-top: 20px;
+}
+
+.right-box .music-table{
+	width: 100%;
+}
+.right-box th.price{
+	text-align: center;
+}
+.right-box td.price{
+	text-align: center;
+}
+.right-box td.price button.buy-button{
+	background-color: #FD7B08;
+	color: #412201;
+	font-weight: bold;
+}
